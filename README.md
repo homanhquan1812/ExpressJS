@@ -28,7 +28,7 @@ app.listen(port, () => {
 })
 ```
 
-Tạo thư mục `KeyGeneration`, rồi tạo file `KeyGeneration.js` và copy đoạn code sau:
+**(Có thể skip bước này)** Tạo thư mục `KeyGeneration`, rồi tạo file `KeyGeneration.js` và copy đoạn code sau:
 ```
 const fs = require('fs');
 const crypto = require('crypto');
@@ -103,7 +103,7 @@ npm install express-handlebars
 
 
 Các tính năng khác **(Không bắt buộc)**:
-* **Dotenv**: Giúp lưu trữ các thông tin nhạy cảm như API KEY hoặc SECRET KEY bên ngoài mã nguồn, giảm nguy cơ lộ thông tin khi chia sẻ mã nguồn.
+* **Dotenv**: Giúp lưu trữ các thông tin nhạy cảm như **API KEY** hoặc **SECRET KEY** bên ngoài mã nguồn, giảm nguy cơ lộ thông tin khi chia sẻ mã nguồn.
 ```
 npm install dotenv
 ```
