@@ -13,9 +13,11 @@ rồi hoàn thành quy trình cài đặt.
 ## Bước 2
 Tạo thư mục <b>src</b> và tạo file <b>index.js</b>, đặt file đó trong thư mục `src`. Mở `index.js` lên và copy dòng code này:
 ```
+require('dotenv').config()
+
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -26,15 +28,46 @@ app.listen(port, () => {
 })
 ```
 
+Tạo thư mục `KeyGeneration`, rồi tạo file `KeyGeneration.js` và copy đoạn code sau:
+```
+const fs = require('fs');
+const crypto = require('crypto');
+
+function generateRandomKey(length) {
+    return crypto.randomBytes(length).toString('hex');
+}
+
+const apiKey = generateRandomKey(16);  // 32 characters
+const secretKey = generateRandomKey(32);  // 64 characters
+
+const envContent = `API_KEY=${apiKey}\nSECRET_KEY=${secretKey}\n`;
+
+fs.writeFile('.env', envContent, (err) => {
+    if (err) {
+        console.error('Error writing to .env file', err);
+    } else {
+        console.log('.env file has been saved with random keys');
+    }
+});
+```
+
+Tiếp đến, tạo file `.env` và chép đoạn code sau:
+```
+MONGODB_URI=mongodb+srv://homanhquan:homanhquan@cluster0.ap9zdrs.mongodb.net/SampleDatabase
+PORT=1234
+```
+
 Sau đó, tạo thư mục `config`, rồi tạo file `db.js`, đặt file này trong thư mục kia. Mở file đó lên và copy dòng code này:
 ```
 const mongoose = require('mongoose')
+require('dotenv').config()
+
 mongoose.set('strictQuery', false)
 
 async function connect()
 {
 	try {
-		await mongoose.connect('mongodb+srv://homanhquan:homanhquan@cluster0.ap9zdrs.mongodb.net/<your_database_name>')
+		await mongoose.connect(process.env.MONGODB_URI)
 		console.log('Database connected successfully.')
 	} catch (error) {
 		console.log('Failed to connect to database.')
@@ -67,7 +100,23 @@ npm install mongoose
 ```
 npm install express-handlebars
 ```
-* **Dotenv**: 
+
+
+Các tính năng khác **(Không bắt buộc)**:
+* **Dotenv**: Giúp lưu trữ các thông tin nhạy cảm như API KEY hoặc SECRET KEY bên ngoài mã nguồn, giảm nguy cơ lộ thông tin khi chia sẻ mã nguồn.
+```
+npm install dotenv
+```
+* **Fs**: Ghi đè file, dùng để viết ngẫu nhiên các thông tin nhạy cảm như `API_KEY` và `SECRET_KEY`.
+```
+npm install fs
+```
+
+Vào thư mục `KeyGeneration`, chạy:
+```
+node KeyGeneration.js
+```
+1 file `.env` sẽ được tạo ra, copy 2 mã đó vào file `.env` ở mục `src`.
 
 ## Bước 4
 Vào file <b>package.json</b>, thêm dòng này tại <b>scripts</b>:
@@ -119,7 +168,7 @@ db.connect()
 // Morgan
 app.use(morgan('combined'))
 
-// Express Body-parser: Xử lý dữ liệu biểu mẫu được mã hóa JSON, Raw, Text và URL.
+// Express Body-parser: Handle data types such as JSON, Raw, Text, URL, etc.
 app.use(express.urlencoded({ extended: true })) 
 app.use(express.json())
 
@@ -145,18 +194,31 @@ route(app)
 ```
 
 ## Bước 7
-Mở thư mục `routes`, tạo 1 file `index.js` và 1 file `home.js`, copy các dòng code sau:
+Mở thư mục `routes`, tạo 1 file `index.js`, 1 file `products.js` và 1 file `home.js`, copy các dòng code sau:
 * `index.js`:
 ```
-const homeRouter = require('./dashboard');
+const homeRouter = require('./home');
+const productsRouter = require('./products');
 
 function route(app) {
     app.use('/', homeRouter);
+    app.use('/products', productsRouter);
 }
 
 module.exports = route;
 ```
-* `home.js`
+* `products.js`:
+```
+const express = require('express');
+const router = express.Router();
+const ProductsController = require('../app/controllers/ProductsController');
+
+router.get('/', ProductsController.showproducts)
+router.get('/edit', ProductsController.editproducts)
+
+module.exports = router;
+```
+* `home.js`:
 ```
 const express = require('express');
 const router = express.Router();
@@ -166,10 +228,12 @@ router.get('/', homeController.homepage)
 
 module.exports = router;
 ```
-Tạo file `Home.js` tại thư mục `models`.
-Sau đó mở thư mục `app`, tạo file `HomeController.js` và copy dòng code sau:
+Tạo file `Products.js` tại thư mục `models`, rồi copy dòng code sau:
+
+
+Sau đó mở thư mục `controllers`, tạo file `HomeController.js` và `ProductsController.js` rồi copy dòng code sau:
+* `HomeController.js`:
 ```
-const HomeDatabase = require('../models/Home')
 const { mongooseToObject, multipleMongooseToObject } = require('../../util/mongoose')
 
 class AboutController
@@ -186,8 +250,36 @@ class AboutController
 module.exports = new AboutController
 ```
 
+* `ProductsController.js`:
+```
+const Products = require('../models/Products')
+const { mongooseToObject, multipleMongooseToObject } = require('../../util/mongoose')
+
+class AboutController
+{
+    // [GET] /products
+    async showproducts(req, res, next)
+    {
+        await res.render('showproducts')
+    }
+
+    // [GET] /products/edit
+    async editproducts(req, res, next)
+    {
+        await res.render('editproducts')
+    }
+}
+
+module.exports = new AboutController
+```
+
 ## Bước 8:
-Tạo file `home.hbs` tại mục `views`, copy đoạn code sau:
+Đầu tiên, ta sẽ tạo thư mục `layouts` trong thư mục `views`, rồi tạo file `main.hbs`.
+
+File này sẽ chứa các dòng code chung mà các page sử dụng, như là `<head>`, 1 vài phần trong `<body>` và `<script>`. Nếu muốn trang web không dùng file này, ta chỉ cần thêm dòng `layout: false` ở các file trong `controllers`.
+
+Sau đó, tạo file `home.hbs`, `showproducts.hbs`, `editproduct.hbs` tại mục `views`, copy đoạn code sau:
+* `home.hbs`:
 ```
 <!DOCTYPE html>
 <html>
@@ -200,5 +292,7 @@ Tạo file `home.hbs` tại mục `views`, copy đoạn code sau:
     </body>
 </html>
 ```
+* `showproducts.hbs`:
+* `editproducts.hbs`:
 
-Xin chúc mừng! Đây là page đầu tiên của bạn.
+Xin chúc mừng! Đây là các page đầu tiên của bạn.
