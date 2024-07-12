@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {{title}}
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        {{#if style}}
+            {{#each style}}
+                <link rel="stylesheet" href="{{this}}">
+            {{/each}}
+        {{/if}}
+    </head>
+    <body>
+        {{> header}}
+
+        <div class="container">
+            <main role="main" class="pb-3">
+                {{{body}}}
+            </main>
+        </div>
+        {{> footer}}
+
+        {{#if script}}
+            {{#each script}}
+                <script type="text/javascript" src="{{this}}"></script>
+            {{/each}}
+        {{/if}}
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<br />
+<h2>List of Products</h2>
+<button type="button" class="btn btn-primary" onclick="window.location.href='/products/add'">Add new product</button>
+<table class="table">
+	<thead>
+		<tr>
+			<th>No</th>
+			<th>Name</th>
+			<th>Type</th>
+			<th style="width: 30%;">Description</th>
+			<th>Price</th>
+			<th style="width: 20%;">Created at</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each products}}
+			<tr>
+				<td>{{sum @index 1}}</td>
+				<td>{{this.csw_products}}</td>
+				<td>{{this.type}}</td>
+				<td>{{this.description}}</td>
+				<td>{{this.price}}</td>
+				<td>{{this.createdAt}}</td>
+				<td>
+					<a class="btn btn-warning" href="/products/edit/{{this._id}}">Edit</a>
+					<form method="POST" action="/products/{{this._id}}?_method=DELETE" style="display: inline;">
+
+						<button class="btn btn-danger">Delete</button>
+					</form>
+				</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+<br /><br />
