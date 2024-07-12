@@ -8,9 +8,56 @@ Mở Terminal lên, tạo dự án bằng cách chạy:
 ```
 npm init
 ```
-rồi hoàn thành quy trình cài đặt.
+rồi hoàn thành quy trình cài đặt đầu tiên.
 
-## Bước 2
+Sau đó, cài đặt những gói thư viện cần thiết này:
+
+* <b>Express</b>: Chứa các tập tin cần thiết của NodeJS và ExpressJS để xây dựng Backend.
+```
+npm install express
+```
+* <b>Nodemon</b>: Giúp khởi động lại ứng dụng Node khi phát hiện có sự thay đổi file hoặc code trong file của dự án.
+```
+npm install -g nodemon
+```
+* <b>Morgan</b>: Cho phép ta dễ dàng ghi lại các yêu cầu, lỗi và hơn thế nữa vào **Console/Terminal**. Thường được sử dụng để coi web hỗ trợ Real-time Data (cập nhật thông tin ngay lập tức) hay không.
+```
+npm install morgan
+```
+* <b>Mongosse</b>: Là một thư viện mô hình hóa đối tượng (Object Data Model - ODM) cho MongoDB và Node.js, được dùng để quản lý các kiểu dữ liệu từ database để website có thể sử dụng.
+```
+npm install mongoose
+```
+* <b>Handlebars</b>: Chứa các tập tin cần thiết của Handlebars để thay thế cho HTML thông thường.
+```
+npm install express-handlebars
+```
+* **Method Override**: Được dùng để cập nhật hoặc xóa dữ liệu trong database.
+```
+npm install method-override
+```
+
+Các tính năng khác **(Không bắt buộc)**:
+* **Dotenv**: Giúp lưu trữ các thông tin nhạy cảm như **API KEY** hoặc **SECRET KEY** bên ngoài mã nguồn, giảm nguy cơ lộ thông tin khi chia sẻ mã nguồn.
+```
+npm install dotenv
+```
+* **Fs**: Ghi đè file, dùng để viết ngẫu nhiên các thông tin nhạy cảm như `API_KEY` và `SECRET_KEY`.
+```
+npm install fs
+```
+* **Mongoose Delete**: Thay vì xóa hẳn dữ liệu khỏi database, ta dùng thư viện để **xóa mềm** bằng cách đặt `deleted: true` hoặc `deleted: false`.
+```
+npm install mongoose-delete
+```
+
+Vào thư mục `KeyGeneration`, chạy:
+```
+node KeyGeneration.js
+```
+1 file `.env` sẽ được tạo ra, copy 2 mã đó vào file `.env` ở mục `src`.
+
+## Bước 3
 Tạo thư mục <b>src</b> và tạo file <b>index.js</b>, đặt file đó trong thư mục `src`. Mở `index.js` lên và copy dòng code này:
 ```
 require('dotenv').config()
@@ -76,47 +123,6 @@ async function connect()
 
 module.exports = { connect }
 ```
-
-## Bước 3
-Cài đặt những gói thư viện cần thiết này:
-
-* <b>Express</b>: Chứa các tập tin cần thiết của NodeJS và ExpressJS để xây dựng Backend.
-```
-npm install express
-```
-* <b>Nodemon</b>: Giúp khởi động lại ứng dụng Node khi phát hiện có sự thay đổi file hoặc code trong file của dự án.
-```
-npm install -g nodemon
-```
-* <b>Morgan</b>: Cho phép ta dễ dàng ghi lại các yêu cầu, lỗi và hơn thế nữa vào **Console/Terminal**. Thường được sử dụng để coi web hỗ trợ Real-time Data (cập nhật thông tin ngay lập tức) hay không.
-```
-npm install morgan
-```
-* <b>Mongosse</b>: Là một thư viện mô hình hóa đối tượng (Object Data Model - ODM) cho MongoDB và Node.js, được dùng để quản lý các kiểu dữ liệu từ database để website có thể sử dụng.
-```
-npm install mongoose
-```
-* <b>Handlebars</b>: Chứa các tập tin cần thiết của Handlebars để thay thế cho HTML thông thường.
-```
-npm install express-handlebars
-```
-
-
-Các tính năng khác **(Không bắt buộc)**:
-* **Dotenv**: Giúp lưu trữ các thông tin nhạy cảm như **API KEY** hoặc **SECRET KEY** bên ngoài mã nguồn, giảm nguy cơ lộ thông tin khi chia sẻ mã nguồn.
-```
-npm install dotenv
-```
-* **Fs**: Ghi đè file, dùng để viết ngẫu nhiên các thông tin nhạy cảm như `API_KEY` và `SECRET_KEY`.
-```
-npm install fs
-```
-
-Vào thư mục `KeyGeneration`, chạy:
-```
-node KeyGeneration.js
-```
-1 file `.env` sẽ được tạo ra, copy 2 mã đó vào file `.env` ở mục `src`.
 
 ## Bước 4
 Vào file <b>package.json</b>, thêm dòng này tại <b>scripts</b>:
