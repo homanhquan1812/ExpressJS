@@ -229,7 +229,23 @@ router.get('/', homeController.homepage)
 module.exports = router;
 ```
 Tạo file `Products.js` tại thư mục `models`, rồi copy dòng code sau:
+```
+const mongoose = require('mongoose')
 
+const Schema = mongoose.Schema;
+
+const Products = new Schema({
+    csw_products: { type: String, maxLength: 255, required: true },
+    createdAt: { type: Date, default: Date.now },
+    type: { type: String, maxLength: 255, required: true },
+    description: { type: String },
+    price: { type: Number, maxLength: 255, required: true },
+    photo: [{type: String, required: true }]
+}, { timestamps: true });
+
+
+module.exports = mongoose.model('products', Products)
+```
 
 Sau đó mở thư mục `controllers`, tạo file `HomeController.js` và `ProductsController.js` rồi copy dòng code sau:
 * `HomeController.js`:
