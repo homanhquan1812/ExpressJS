@@ -47,6 +47,14 @@ npm install method-override
 ```
 npm install dotenv
 ```
+* **Bcrypt**: Tăng bảo mật cho Login/Register.
+```
+npm install bcrypt
+```
+* **Session**: Tạo phiên làm việc sau khi Login và xóa phiên sau khi Logout.
+```
+npm install express-session
+```
 * **Fs**: Ghi đè file, ở project này thì dùng để viết ngẫu nhiên các thông tin nhạy cảm như `API_KEY` và `SECRET_KEY` trong file `keygeneration.js` ở dưới.
 ```
 npm install fs
