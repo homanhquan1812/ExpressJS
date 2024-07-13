@@ -3,7 +3,7 @@
   <img src="https://github.com/user-attachments/assets/a91e185f-1b6a-48f6-bdc8-baa638873cb7" alt="NodeJS + ExpressJS Logo" width="600">
 </div>
 
-## Project này gồm tính năng gì của NodeJS & ExpressJS?
+## Project này gồm tính năng nổi bật gì của NodeJS & ExpressJS?
 1. `Bcrypt`: Tăng bảo mật Login/Register cho website.
 2. `Middleware`: Là đoạn mã trung gian nằm giữa **req** và **res**, thường được sử dụng để xác thực, ghi log, xử lý lỗi,...
 3. `Session & Cookie`:
