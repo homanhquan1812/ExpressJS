@@ -6,7 +6,8 @@
 ## Project này gồm tính năng nổi bật gì của NodeJS & ExpressJS?
 1. `Bcrypt`: Tăng bảo mật Login/Register cho website.
 2. `Middleware`: Là đoạn mã trung gian nằm giữa **req** và **res**, thường được sử dụng để xác thực, ghi log, xử lý lỗi,...
-3. `Session & Cookie`:
+3. `Rate Limit`: Giới hạn số lần đăng nhập sai.
+4. `Session & Cookie`:
 * **Session**: Là phiên làm việc giữa client và server, thông tin phiên làm việc được lưu trữ trên server và được liên kết với 1 session ID duy nhất.
 * **Cookie**: Là đoạn dữ liệu được lưu trữ trong trình duyệt, thường được sử dụng để lưu trữ session ID, sở thích của người dùng trên Internet,...
 
@@ -54,6 +55,10 @@ npm install bcrypt
 * **Session**: Tạo phiên làm việc sau khi Login và xóa phiên sau khi Logout.
 ```
 npm install express-session
+```
+* **Rate limit**: Giới hạn số lần đăng nhập sai.
+```
+npm install express-rate-limit
 ```
 * **Fs**: Ghi đè file, ở project này thì dùng để viết ngẫu nhiên các thông tin nhạy cảm như `API_KEY` và `SECRET_KEY` trong file `keygeneration.js` ở dưới.
 ```
