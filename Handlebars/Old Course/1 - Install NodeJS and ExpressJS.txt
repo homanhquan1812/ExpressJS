@@ -1,0 +1,46 @@
+1. Download and install Node.
+
+2. Open your project folder, type "npm init" on Terminal.
+
+3. Skip "package name", "version", and "description" by pressing Enter.
+
+4. Set the name for your js file, this file is named "index.js" by default (Optional).
+
+5. Skip "test command".
+
+6. Paste your Github respiratory here (Optional).
+
+7. Skip "keywords", "author", and "license (ISC)".
+
+8. Type Enter to confirm.
+
+9. Install Express by typing "npm install express" on Terminal
+
+10. Create a file named index.js.
+Go to this website and copy the "Hello World" code:
+https://expressjs.com/en/starter/hello-world.html
+
+11. Install Nodemon by typing "npm install -g nodemon" on Terminal.
+
+12. Go to "package.json", add this line at "scripts": 
+"start": "nodemon index.js",
+
+13. Run "npm start" on Terminal.
+
+14. Install Morgan by typing "npm install morgan" on Terminal.
+
+15. Add these codes to your js file:
+const morgan = require('morgan')
+app.use(morgan('combined'))
+
+Some explanations:
+- Nodemon is a utility that monitors for changes in files in your Node.js application 
+and automatically restarts the server when it detects any changes. 
+It's particularly useful during development because it saves you from having to manually stop 
+and restart your server every time you make a change in your code.
+
+- Morgan is a popular HTTP request logger middleware for Node.js. 
+It's used to log information about incoming requests in your Node.js application. 
+This middleware can be easily integrated with Express.js, although it can also be used with other Node.js web frameworks.
+
+16. Instal Express HandleBars by typing "npm install express-handlebars" on Terminal.

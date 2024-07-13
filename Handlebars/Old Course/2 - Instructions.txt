@@ -1,0 +1,1094 @@
+1. Go to "index.js", edit these lines:
+    app.get('/', function (req, res) {
+    res.render('home')
+    })
+
+2. Create a folder named "src" in your project folder, and move the main js file to that folder.
+
+3. Open "package.json" and edit these lines:
+"main": "src/index.js"
+"start": "nodemon src/index.js" 
+
+Terminate current batch job by pressing Ctrl + C on Terminal then run npm start again.
+
+4. Open your main js file, add these lines:
+    const Handlebars = require("express-handlebars");
+
+    app.engine('handlebars', Handlebars.engine())
+    app.set('view engine', 'handlebars')
+
+Notes: ExpressJS doesn't require semi-colon at the end of line, but the code still works with it.
+
+5. Create a folder in the project named "resources" then create another one named "views" in it.
+We can type "resources\views" in VSCode.
+
+6. Go to the "views" folder, create a file named "home.handlebars".
+Open it and type something related to HTML like: <h1>HOME PAGE</h1>
+
+7. In this folder, create another folder named "layouts", then a file named "main.handlebars".
+Open it and type something related to HTML like: <h1>MAIN LAYOUT</h1>
+
+8. Go back to "index.js", add this line:
+    const path = require('path')
+    app.set('views', path.join(__dirname, 'resources\\views'))
+
+9. Reset the page, so that you can see the sentence "MAIN LAYOUT" there.
+
+10. Now we will use "main.handlebars" and "home.handlebars" for your HTML page. 
+Go to this address, copy all codes in there and paste in to "main.handlebars".
+https://github.com/express-handlebars/express-handlebars/blob/master/examples/basic/views/layouts/main.handlebars
+
+11. Reset the page, so that you can see the sentence "HOME PAGE" there.
+
+12. I will design a simple HTML page like this:
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8" />
+            <title>ExpressJS Website</title>
+        </head>
+        <body>
+            <header>
+                <h1>Header</h1>
+            </header>
+
+            <div class="container">
+                {{{body}}}
+            </div>
+
+            <footer>
+                <h1>Footer</h1>
+            </footer>
+        </body>
+    </html>
+
+I want to create a new page named "about", so the address for it should be "localhost:3000/about".
+To do that, I have to add these lines:
+    app.get('/about', function (req, res) {
+    res.render('about');
+    })
+
+After that, I create a file named "about.handlebars" in "views" folder.
+I add a HTML line to it: <h1>ABOUT PAGE</h1>
+
+When you go to that page, you can see that {{{body}}} prints what you write in "about.handlebars", and the others still remain.
+
+13. If you find the name of type ".handlebars" too long, you can change it.
+Go to "index.js", I want to change it to ".hbs", so i edit these lines:
+    app.engine('hbs', Handlebars.engine({
+        extname: '.hbs'
+    }))
+    app.set('view engine', 'hbs')
+
+Remember to change the type name for all files you created.
+
+14. If you want to separate both header and footer like the previous files, just create a folder in "views" named "partials".
+Then create 2 files: "header.hbs" and "footer.hbs"
+After that, add these lines in HTML body: {{> header}} and {{> footer}}.
+
+15. If you want express to read another folder, use this solution.
+For example, I will create a folder in project folder named "public", then "img" in there. After that, i put a photo named "logo.jpg".
+Go back to your main js file, add this line:
+    app.use(express.static(path.join(__dirname, 'public')))
+
+Now you can go to the link localhost:3000/img/logo.jpg and check that file.
+
+16. If you want to use SASS/SCSS, install it by typing "npm install node-sass" on Terminal.
+After the installation is complete, create a folder in "resources" named "scss" then create a file named "app.scss".
+
+17. Since website can't use SASS/SCSS, we will create a folder named "css" in "public", then we will try to convert SCSS file into CSS file.
+
+18. Open "package.json" and add this line on "scripts":
+    "watch": "node-sass src/resources/scss/app.scss src/public/css/app.css",
+
+19. Compile something on CSS file, for example:
+    .test {
+        font-size: 10px;
+        background-color: red;
+        font-weight: 700;
+    }
+
+When you finish, run "npm run watch" on Terminal.
+
+20. Remember that you must compile anything you want on SCSS file, NOT CSS file.
+To save time when you want to edit something instead of spamming "npm run watch" multiple times, edit this line:
+    "watch": "node-sass --watch src/resources/scss/app.scss src/public/css/app.css",
+
+Then run again.
+
+21. Open "main.hbs" and add this line:
+    <link rel="stylesheet" href="/css/app.css">
+Then you can change anything in CSS file (Auto-save on VSCode may not work properly, you have to click Ctrl + S to save it).
+
+22. If you want to use variables for CSS, create a new file named "_variable.scss" in "scss" folder.
+After that, just add this line in "app.scss":
+    @import 'variables';
+
+For example, I add "$red-color: red;" in "_variables.scss", then I edit the line "color: $red-color;".
+
+23. We've got the problem that when we save scripts from "_variables.scss", the website doesn't change anything,
+and we have to save more "app.scss" to make it work.
+To let it save automatically, Go back to "package.json", edit this line:
+    "watch": "node-sass --watch src/resources/scss/app.scss --output src/public/css/",
+
+Run "npm run watch" again on Terminal.
+
+24. Study what MVP (Model-View-Controller) is, then we will move on to the next part.
+
+25. We will focus on "Routes & Controllers". Create a folder named "routes" in "src", then create another one "app/controllers".
+
+26. Create a file named "about.js" in "routes" folder, then "AboutController.js" in "app/controllers".
+
+27. Open "AboutController.js" then add these lines:
+    class AboutController
+    {
+        // [GET] /about
+        index(req, res)
+        {
+            res.render('about');
+        }
+    }
+
+    module.exports = new AboutController;
+
+28. Then remove these lines in the main "index.js":
+    app.get('/about', function (req, res) {
+    res.render('about');
+    })
+
+29. Create a file named "index.js" in "routes", open it and add these lines:
+    const aboutRouter = require('./about')
+
+    function route(app)
+    {
+        app.use('/about', aboutRouter)
+    }
+
+    module.exports = route
+
+30. Go back to the main "index.js" and add this line:
+    const route = require('./routes');
+
+    route(app);
+
+31. Open "about.js" and add these lines:
+    const express = require('express')
+    const router = express.Router()
+
+    const aboutController = require('../app/controllers/AboutController')
+
+    router.use('/', aboutController.index)
+
+    module.exports = router
+
+Then you can still see that the "about" page is still working.
+The address for it is still "localhost:3000/about". When I add something like "localhost:3000/about/contact",
+the page is still at "about". This method is to create any routes simply and shortly.
+
+32. I want to create another page that's for "contact" in "about". To do that, open "about.js" and add this line:
+    router.use('/:slug', aboutController.show)
+
+Search on Google what ":slug" of ExpressJS is.
+Remember to add it above the line "router.use('/', aboutController.index)", otherwise the page won't work.
+Go back to "AboutController.js" and add these lines in the class:
+    // [GET] /:slug
+    show(req, res)
+    {
+        res.send('Contact us: expressjs@gmail.com');
+    }
+
+Then you can see that the example link works.
+
+33. In case that you want to create other pages like "about". For example, I want to create a "Delivery" page,
+just add another file in "controllers" -> "DeliveryController.js" and edit it.
+
+In "routes" folder, create a file named "delivery.js", copy everything from "about.js" and edit it.
+
+After that, open "index.js" in "routes" then add "app.use('/about', aboutRouter)" in the function then
+add "const deliveryRouter = require('./delivery')"
+
+then "app.use('/delvery', aboutRouter)" in function.
+--------------------------------------------------------------------------------------------------------------------
+34. Let's move on to MongoDB, open it and create a database named "myDatabase", set "firstdatabases" for Collection Name.
+
+35. Click "ADD DATA" -> "Insert document", then click the list icon that has 3 dashes.
+Choose "Add field" by clicking number 1 before "_id", create some lines like this:
+    name: "Tutorials how to install NodeJS and ExpressJS"
+    description: "Tutorials how to install NodeJS and ExpressJS"
+    image: "https://www.bairesdev.com/wp-content/uploads/2021/07/Expressjs.svg"
+
+Then click "Insert".
+
+36. Install Mongoose by typing "npm install mongoose" on Terminal (Search on Google what Mongoose is).
+
+37. In "src" folder, create a folder named "config", then "db" folder inside it, then a file named "index.js" inside it.
+Open it and add these lines:
+    const mongoose = require('mongoose')
+
+    async function connect()
+    {
+        try {
+            await mongoose.connect('mongodb://127.0.0.1:27017/Database1') // Don't replace 127.0.0.1 with localhost, cause it won't work
+            console.log('Connected successfully.')
+        } catch (error) {
+            console.log('Failed to connect.')
+        }
+    }
+
+    module.exports = { connect }
+
+38. Go back to the main "index.js", add this line:
+    const db = require('./config/db')
+
+    // Connect to Database
+    db.connect()
+
+Then you can see our files connect to the database successfully.
+
+39. In "app" folder, create a folder named "models", then create a file named "Course.js". Open it and copy these lines:
+    const mongoose = require('mongoose')
+
+    const Schema = mongoose.Schema;
+    const ObjectId = Schema.ObjectId;
+
+    const firstdatabase = new Schema({
+        name: { type: String, maxLength: 255 },
+        description: { type: String, maxLength: 600 },
+        image: { type: String, maxLength: 255 },
+        createdAt: { type: Date, default: Date.now },
+        updatedAt: { type: Date, default: Date.now }
+    });
+
+    module.exports = mongoose.model('firstdatabase', firstdatabase)
+
+40. Go back to "AboutController.js",  edit these lines:
+    index(req, res)
+    {
+        res.json({
+            name: 'NodeJS and ExpressJS'
+        })
+        // res.render('about');
+    }
+
+Open "about" page, you can see the line: {"name":"NodeJS and ExpressJS"}
+
+41. Add this line at the first row:
+    const firstdatabase = require('../models/Course')
+
+then edit the index:
+    async index(req, res)
+    {
+        try {
+            const firstdatabases = await firstdatabase.find({});
+            res.json(firstdatabases);
+        } catch (err) {
+            res.status(400).json({ error: 'ERROR' });
+        }
+        // res.render('about');
+    }
+
+After finishing, u can see the JSON data on "about" page.
+You find that data hard to read, so we should install a new extension called "JSON viewer" on your browser.
+
+42. "Open about.js", replace "use" with "get", google it to understand why.
+
+43. Go back to "AboutController.js", to write the "index" shortly, replace everything with these lines:
+    index(req, res, next)
+    {
+        FirstDatabase.find({})
+            .then(firstdatabases => res.render('about', { 
+                title: 'TEST TITLE'
+            }))
+            .catch(next)
+    }
+
+When you reload the page, it will load the "about" page.
+
+44. Open "about.hbs" and edit this line: <h1>{{ FirstDatabase }}</h1>
+Then you can see the title changed. Now delete it and add this code:
+    <div class="mt-4">
+        <div class="row">
+            {{#each firstdatabases}}
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.name}}</h5>
+                        <p class="card-text">{{this.description}}</p>
+                        <a href="#" class="btn btn-primary">ExpressJS</a>
+                    </div>
+                </div>
+            </div>
+
+            {{/each}}
+        </div>
+    </div>
+
+(https://getbootstrap.com/docs/4.0/components/card/)
+Remember to add this line in "main.hbs":
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+45. We've got a problem that we can't show the card properly. To fix it, edit index in "AboutController.js"
+    index(req, res, next)
+    {
+        FirstDatabase.find({})
+            .then(firstdatabases => {
+                firstdatabases = firstdatabases.map(firstdatabase => firstdatabase.toObject())
+                res.render('about', { firstdatabases })
+            })
+            .catch(next)
+    }
+
+Then you can see it shows properly.
+
+46. In "src" folder, create a folder named "util", then "mongoose.js" in it. Open it and add these lines:
+    module.exports = {
+        multipleMongooseToObject: function(mongooses) {
+            return mongooses.map(mongoose => mongoose.toObject())
+        },
+        mongooseToObject: function(mongoose) {
+            return mongoose ? mongoose.toObject() : mongoose;
+        }
+    }
+
+47. Go back to "AboutController.js", add this line:
+    const { multipleMongooseToObject } = require('../../util/mongoose')
+
+Then delete this line:
+    firstdatabases = firstdatabases.map(firstdatabase => firstdatabase.toObject())
+
+Then fix this index:
+    index(req, res, next)
+    {
+        FirstDatabase.find({})
+            .then(firstdatabases => {
+                res.render('about', { 
+                    firstdatabases: multipleMongooseToObject(firstdatabases)
+                })
+            })
+            .catch(next)
+    }
+
+You can see the website is still working.
+
+48. Open MongoDB and add 1 more field and that is slug: "tutorials" below image field.
+Then go back to "controllers" and create a file named "CourseController.js", copy all things from "AboutController.js" and paste on it.
+Remember to rename some things like class name,...
+And create a file named "courses.js" in "routes", copy all things from "about.js" and paste on it and rename some necessary parts in that file.
+
+49. Go to "index.js" from "routes" and add these two lines:
+    const coursesRouter = require('./courses')
+    app.use('/courses', coursesRouter)
+
+50. In "CourseController.js", delete the whole index and edit this:
+    class CourseController
+    {
+        // [GET] /courses/:slug
+        show(req, res)
+        {
+            res.send('COURSE DETAIL');
+        }
+    }
+
+When you go to courses/tutorials, u will see the text there.
+
+Then edit it:
+    show(req, res, next)
+    {
+        FirstDatabase.findOne({ slug: req.params.slug })
+            .then(course => {
+                res.json(course)
+            })
+            .catch(next)
+    }
+
+51. In "views" folder, create a folder named "courses", then "show.hbs" in it. Go back to the latest editted part,
+edit "res.json(course)" to "res.render('courses/show')"
+
+52. Open "show.hbs" and add these lines:
+    <h1>Hello</h1>
+    <h2>Title</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/LnTPJcUQdNU?si=q4BZMS4yBMnPthbu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+Then you can see the video there.
+
+53. Open MongoDB and add another field named "videoID" -> LnTPJcUQdNU
+Go back to "show.hbs", when we change <h2>Title</h2> to <h2>{{course.name}}</h2>, the title disappears.
+To fix it, open "CourseController.js", edit this line:
+    const { mongooseToObject } = require('../../util/mongoose')
+
+and
+    FirstDatabase.findOne({ slug: req.params.slug })
+    .then(course => {
+        res.render('courses/show', { course: mongooseToObject(course)})
+    })
+    .catch(next)
+
+You will see the title changed according to the name from database.
+Then you can edit anything else like videoID:
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{course.videoID}}?si=q4BZMS4yBMnPthbu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+54. Open "courses.js" and add this line below "const courseController":
+    router.get('/create', courseController.create)
+
+Go back to "CourseController.js" and add these lines:
+    // [GET] /courses/create
+    create(req, res, next)
+    {
+        res.render('courses/create')
+    }
+
+Then create a file named "create.hbs" in "view/courses" folder, add these lines:
+    <form method="POST" action="/courses/store">
+        <div class="form-group">
+            <label for="description">Tên khóa học</label>
+            <input type="type" class="form-control" id="description" name="description">
+        </div>
+            <div class="form-group">
+            <label for="description">Mô tả</label>
+            <input type="type" class="form-control" id="description" name="description">
+        </div>
+            <div class="form-group">
+            <label for="description">Video ID</label>
+            <input type="type" class="form-control" id="description" name="description">
+        </div>
+            <div class="form-group">
+            <label for="description">Trình độ</label>
+            <input type="type" class="form-control" id="description" name="description">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+55. Go back to "courses.js" and add this line:
+    router.post('/store', courseController.store)
+
+And open "CourseController.js", add this line
+    // [POST] /courses/store
+    store(req, res, next)
+    {
+        res.json(req.body)
+    }
+
+Go back to the main "index.js" and add these lines:
+    app.use(express.urlencoded({ extended: true })) 
+    app.use(express.json())
+
+You will see what you type on /courses/create will be saved at json.
+
+56. Now edit the line: 
+    store(req, res, next)
+    {
+        const course = new Course(req.body)
+        course.save()
+    }
+
+Then go back to "Course.js" and add these lines:
+    videoID: { type: String, maxLength: 255 },
+    level: { type: String, maxLength: 255 },
+
+If there's a field that you need it to be required, just add "required: true" in {}
+Or if you want to add timestamp, edit the code like this:
+    const FirstDatabase = new Schema({
+    name: { type: String, maxLength: 255 },
+    description: { type: String, maxLength: 600, required: true },
+    videoID: { type: String, maxLength: 255, required: true },
+    level: { type: String, maxLength: 255 },
+    image: { type: String, maxLength: 255 },
+    }, { timestamps: true })
+
+57. Go to "CourseController.js" and edit this funciton:
+    store(req, res, next)
+    {
+        const formData = req.body
+        formData.name = `This course is ${req.body.name}.`
+        const course = new FirstDatabase(formData)
+        course.save()
+
+        res.send('Finished saving.')
+    }
+
+Reload the page, then you will see the data has been saved in Database.
+
+58. Edit the above code like this:
+        course.save()
+            .then(() => res.redirect('/about'))
+            .catch(error => {
+
+            })
+
+When you open "about" page, your data is saved there.
+
+59. Install "npm i mongoose-slug-generator" and "npm i mongoose-slug-updater" on Terminal
+Open "Course.js" and add these lines:
+    const slug = require('mongoose-slug-updater')
+
+    mongoose.plugin(slug)
+
+Then add this line:
+    slug: { type: String, slug: 'name'}
+
+Reload the database, you will see that slug has been updated. But there's a problem that if there's
+another title that is similar to the previous one, that will make slug is still the same.
+To fix it, add ", unique: true" after "slug: 'name'"
+
+Go to "about.hbs" and fix this code:
+    <a href="/course/{{this.slug}}">
+        <h5 class="card-title">{{this.name}}</h5>
+    </a>
+
+When you click the title, it will redirect to the page according to the slug we set.
+
+60. Add this dropdown in "header.hbs":
+    <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown link
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/courses/create">Upload courses</a>
+            <a class="dropdown-item" href="/me/stored/courses">My courses</a>
+            <a class="dropdown-item" href="/me/stored/news">My posts</a>
+        </div>
+    </div>
+
+If the dropdown doesn't work properly, add these scripts in "main.hbs":
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+61. Go to "routes" folder and create a file named "me.js", open it and add these lines:
+    const express = require('express')
+    const router = express.Router()
+
+    const courseController = require('../app/controllers/CourseController')
+
+    router.get('/stored/courses', courseController.storedCourses)
+
+    module.exports = router
+
+62. Go to "controllers" folder and create a file named "MeController.js", open it and add these lines:
+    const FirstDatabase = require('../models/Course')
+    const { multipleMongooseToObject } = require('../../util/mongoose')
+
+    class MeController
+    {
+        // [GET] /me/stored/courses
+        storedCourses(req, res, next)
+        {
+            FirstDatabase.find({})
+                .then(courses => res.render('me/stored-courses', {
+                    courses: multipleMongooseToObject(courses)
+                }))
+                .catch(next)
+        }
+    }
+
+    module.exports = new MeController
+
+63. Go to "index.js" in "routes" folder and add these lines:
+    const meRouter = require('./me')
+
+    app.use('/me', meRouter)
+
+64. In "views" folder, create a folder named "me" then create a file named "stored-courses.hbs" in it.
+Add these lines:
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Course number</th>
+                <th scope="col">Description</th>
+                <th scope="col">Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each courses}}
+            <tr>
+            <th scope="row">{{sum @index 1}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.level}}</td>
+                <td>{{this.createAt}}</td>
+                <td>
+                    <a href="/courses/{{this._id}}/edit" class="btn btn-link">Edit</a>
+                    <a href="" class="btn btn-link">Delete</a>
+                </td>
+            </tr>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+After that, open the main "index.js" and edit this part:
+    // Template engine
+    app.engine('hbs', Handlebars.engine({
+    extname: '.hbs',
+    helpers: {
+        sum: (a, b) => a + b
+    }
+    }))
+
+Now you can see the table according to database.
+
+65. Open "courses.js" and add this line:
+    router.get('/:id/edit', courseController.edit)
+
+Then open "CourseController.js" and add this function:
+    // [GET] /courses/edit
+    edit(req, res, next)
+    {
+        FirstDatabase.findById(req.params.id)
+            .then(course => res.render('courses/edit', {
+                course: mongooseToObject(course)
+            }))
+            .catch(next)
+    }
+
+66. In "courses" folder, create a copy of "create.hbs" and rename it to "edit.hbs"
+Open it and add these lines:
+    <h1>Edit</h1>
+    <form method="POST" action="/courses/{{course._id}}?_method=PUT">
+        <div class="form-group">
+        <label for="name">Tên khóa học</label>
+        <input type="type" class="form-control" value="{{course.name}}" id="name" name="name">
+        </div>
+        <div class="form-group">
+        <label for="description">Mô tả</label>
+        <input type="type" class="form-control" value="{{course.description}}" id="description" name="description">
+        </div>
+        <div class="form-group">
+        <label for="videoID">Video ID</label>
+        <input type="type" class="form-control" value="{{course.videoID}}" id="videoID" name="videoID">
+        </div>
+        <div class="form-group">
+        <label for="level">Trình độ</label>
+        <input type="type" class="form-control" value="{{course.level}}" id="level" name="level">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+67. Install "npm install method-override" on Terminal.
+After that, open the main "index.js" and add these lines:
+    const methodOverride = require('method-override')
+
+    app.use(methodOverride('_method'))
+
+68. Open "courses.js" and add this line:
+    router.put('/:id', courseController.update)
+
+Then open "CourseController.js" and add this function:
+    // [PUT] /courses/:id
+    update(req, res, next)
+    {
+        FirstDatabase.updateOne({_id: req.params.id}, req.body)
+            .then(() => res.redirect('/me/stored/courses'))
+            .catch(next)
+    }
+
+Then you can edit the post.
+
+69. Open "stored-courses.hbs" and add these lines below the table:
+    <form method="POST" name="delete-course-form"></form>
+
+    <div id="delete-course-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure that you want to delete this course?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-delete-course" type="button" class="btn btn-primary">Yes</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Yesn't</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var courseID
+            var deleteForm = document.forms['delete-course-form']
+            var btnDeleteCourse = document.getElementById('btn-delete-course')
+
+            $('#delete-course-modal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget)
+                courseID = button.data('id') 
+            })
+
+            btnDeleteCourse.onclick = function()
+            {
+                deleteForm.action = '/courses/' + courseID + '?_method=DELETE'
+                deleteForm.submit()
+            }
+        })
+    </script>
+
+After that, edit this line in the table:
+    <a href="" class="btn btn-link" data-toggle="modal" data-id="{{this._id}} "data-target="#delete-course-modal">Delete</a>
+
+70. Open "courses.js" and add this line:
+    router.delete('/:id', courseController.delete)
+
+Then open "CourseController.js" and add this function:
+    // [DELETE] /courses/:id
+    delete(req, res, next)
+    {
+        FirstDatabase.deleteOne({_id: req.params.id}, req.body)
+            .then(() => res.redirect('back'))
+            .catch(next)
+    }
+
+So that you can delete any course you want.
+
+71. If you want to create a delete feature that just temporarily deletes any files, then you can recover them later if you want to, follow this:
+Install "npm install mongoose-delete" on Terminal.
+
+Go to "Course.js" and add this line:
+    const mongooseDelete = require('mongoose-delete')
+
+Then add this line above "module.exports":
+    FirstDatabase.plugin(mongooseDelete, {
+        deletedAt: true,
+        overrideMethods: 'all'
+    })
+
+72. Open "CourseController.js" and fix this line in "delete" function:
+    FirstDatabase.delete({_id: req.params.id}, req.body)
+
+Go back to the website, you can delete any course you want, and you can see every course you deleted has one more line:
+    "deleted: true"
+
+In case that you delete all of them but you want to show a line like "No data here.", go to "stored-courses.hbs" and add these lines above {{/each}}:
+        {{else}}
+        <tr>
+          <td colspan="5" class="text-center">
+            No courses here.
+            <a href="/courses/create">Click here to create one</a>
+          </td>
+        </tr>
+
+73. If you want to restore deleted courses, add this line above the table:
+    <a href="/me/trash/courses" style="font-weight: bold">Deleted courses</a>
+
+Then open "me.js" and add this line:
+    router.get('/trash/courses', meController.trashCourses)
+
+After that, open "MeController.js" and add this function:
+    // [GET] /me/trash/courses
+    trashCourses(req, res, next)
+    {
+        FirstDatabase.find({})
+            .then(courses => res.render('me/trash-courses', {
+                courses: multipleMongooseToObject(courses)
+            }))
+            .catch(next)
+    }
+
+74. In "me" folder, create a file named "trash-courses.hbs" and add these lines:
+<a href="/me/stored/courses" style="font-weight: bold">My courses</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Course number</th>
+            <th scope="col">Description</th>
+            <th scope="col">Level</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each courses}}
+        <tr>
+          <th scope="row">{{sum @index 1}}</th>
+            <td>{{this.name}}</td>
+            <td>{{this.level}}</td>
+            <td>{{this.createAt}}</td>
+            <td>
+                <a href="" class="btn btn-link btn-restore" data-id="{{this._id}}">Restore</a>
+                <a href="" class="btn btn-link" data-toggle="modal" data-id="{{this._id}}" data-target="#delete-course-modal">Delete forever</a>
+            </td>
+        </tr>
+        {{else}}
+        <tr>
+          <td colspan="5" class="text-center">
+            No deleted courses here.
+            <a href="/courses/create">Click here to create one</a>
+          </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<form method="POST" name="delete-course-form"></form>
+
+<div id="delete-course-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure that you want to delete this course?</p>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-delete-course" type="button" class="btn btn-primary">Yes</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Yesn't</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var courseID
+        var deleteForm = document.forms['delete-course-form']
+        var btnDeleteCourse = document.getElementById('btn-delete-course')
+
+        $('#delete-course-modal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget)
+            courseID = button.data('id') 
+        })
+
+        btnDeleteCourse.onclick = function()
+        {
+            deleteForm.action = '/courses/' + courseID + '?_method=DELETE'
+            deleteForm.submit()
+        }
+    })
+</script>
+
+75. Open "courses.js" and add this line:
+    router.patch('/:id/restore', courseController.restore)
+
+Then open "CourseController.js" and add this function:
+    // [RESTORE] /courses/:id/restore
+    restore(req, res, next)
+    {
+        FirstDatabase.restore({_id: req.params.id}, req.body)
+            .then(() => res.redirect('back'))
+            .catch(next)
+    }
+
+Then you can restore any course you deleted.
+
+76. If you want to force delete, add this line in "courses.js":
+    router.delete('/:id/force', courseController.forceDelete)
+
+Then add this function in "CourseController.js":
+    // [FORCE DELETE] /courses/:id/force
+    forceDelete(req, res, next)
+    {
+        FirstDatabase.deleteOne({_id: req.params.id}, req.body)
+            .then(() => res.redirect('back'))
+            .catch(next)
+    }
+
+After that, edit this function in "trash-courses.hbs":
+        btnDeleteCourse.onclick = function()
+        {
+            deleteForm.action = '/courses/' + courseID + '/force?_method=DELETE'
+            deleteForm.submit()
+        }
+
+Then any file you force delete will be gone forever.
+
+77. If you want to add number of deleted files, edit this function in "MeController.js":
+    storedCourses(req, res, next)
+    {
+        Promise.all([FirstDatabase.find({}), FirstDatabase.countDocumentsWithDeleted({deleted: true})])
+            .then(([courses, deletedCount]) => res.render('me/stored-courses', {
+                deletedCount,
+                courses: multipleMongooseToObject(courses)
+            }))
+            .catch(next)
+    }
+
+Then open "stored-courses.hbs" and edit this line:
+    <a href="/me/trash/courses" style="font-weight: bold">Deleted courses ({{deletedCount}})</a>
+
+78. If you want to make a checkbox to choose some parts that need to be deleted, edit the "stored-courses.hbs" file like this:
+
+    <form name="container-form" method="POST" action="/courses/handle-form-actions">
+    <a href="/me/trash/courses" style="font-weight: bold">Deleted courses ({{deletedCount}})</a>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="checkbox-all">
+        <label class="form-check-label" for="checkbox-all" style="font-weight: bold">
+        Choose all.
+        </label>
+    </div>
+        <div class="form-group">
+        <label for="exampleFormControlSelect1">Select any course you want to delete:</label>
+        <select class="form-control" name="action">
+            <option value="delete">Delete</option>
+            <option value="newfeature" disabled>(New features are being developed)</option>
+        </select>
+        <br>
+        <button class="btn btn-primary check-all-submit-btn disabled">Proceed</button>
+        </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Checkbox</th>
+                <th scope="col">Course number</th>
+                <th scope="col">Description</th>
+                <th scope="col">Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each courses}}
+            <tr>
+                <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="{{this._id}}" name="courseIDs[]">
+                </div>
+                </td>
+                <th scope="row">{{sum @index 1}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.level}}</td>
+                <td>{{this.createAt}}</td>
+                <td>
+                    <a href="/courses/{{this._id}}/edit" class="btn btn-link">Edit</a>
+                    <a href="" class="btn btn-link" data-toggle="modal" data-id="{{this._id}}" data-target="#delete-course-modal">Delete</a>
+                </td>
+            </tr>
+            {{else}}
+            <tr>
+                <td colspan="5" class="text-center">
+                No courses here.
+                <a href="/courses/create">Click here to create one</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    </form>
+
+    <form method="POST" name="delete-course-form"></form>
+
+    <div id="delete-course-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Delete Confirmation</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>Are you sure that you want to delete this course?</p>
+        </div>
+        <div class="modal-footer">
+            <button id="btn-delete-course" type="button" class="btn btn-primary">Yes</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Yesn't</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var courseID
+            var deleteForm = document.forms['delete-course-form']
+            // var containerForm = document.forms['container-form']
+            var containerForm = $('form[name="container-form"]')
+            var btnDeleteCourse = document.getElementById('btn-delete-course')
+            var checkBoxAll = $('#checkbox-all')
+            var courseItemCheckBox = $('input[name="courseIDs[]"]')
+            var checkAllSubmitBtn = $('.check-all-submit-btn')
+
+            $('#delete-course-modal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget)
+                courseID = button.data('id') 
+            })
+
+            btnDeleteCourse.onclick = function()
+            {
+                deleteForm.action = '/courses/' + courseID + '?_method=DELETE'
+                deleteForm.submit()
+            }
+
+            checkBoxAll.change(function ()
+            {
+            var isCheckedAll = $(this).prop('checked')
+                courseItemCheckBox.prop('checked', isCheckedAll)
+                renderCheckAllSubmitBtn()
+            })
+
+            courseItemCheckBox.change(function() 
+            {
+            var isCheckedAll = courseItemCheckBox.length === $('input[name="courseIDs[]"]:checked').length
+            checkBoxAll.prop('checked', isCheckedAll)
+            renderCheckAllSubmitBtn()
+            })
+
+            containerForm.on('submit', function(e) {
+            var isSubmittable = !checkAllSubmitBtn.hasClass('disabled');
+            if (!isSubmittable) {
+                e.preventDefault();
+            }
+            });
+
+
+            function renderCheckAllSubmitBtn()
+            {
+            var checkedCount = $('input[name="courseIDs[]"]:checked').length
+            if (checkedCount > 0)
+            {
+                checkAllSubmitBtn.attr('disabled', false)
+            }
+            else
+            {
+                checkAllSubmitBtn.attr('disabled', true)
+            }
+            }
+        })
+    </script>
+
+Then open "courses.js" and add this line:
+    router.post('/handle-form-actions', courseController.handleFormActions)
+
+After that, go to "CourseController.js" and add this function:
+
+    // [POST] /courses/handle-form-actions
+    handleFormActions(req, res, next)
+    {
+        switch(req.body.action)
+        {
+            case 'delete':
+                FirstDatabase.delete({_id: { $in: req.body.courseIDs }})
+                    .then(() => res.redirect('back'))
+                    .catch(next)
+                break
+            default:
+                res.json({message: 'Action is invalid.'})
+        }
+    }
+
+79. Search on Google what "Middleware" is. After that, open the main "index.js" and add this function:
+    app.use(middleware)
+
+    function middleware (req, res, next)
+    {
+        if (['cheapticket', 'expensiveticket'].includes(req.query.ticket))
+        {
+        return next()
+        }
+        else
+        {
+        res.status(403).json({
+            message: 'Access denied'
+        })
+        }
+    }
+
+You can see that when we access "localhost:3000", the access is denied.
+But if we use "localhost:3000?ticket=cheapticket", it works.
