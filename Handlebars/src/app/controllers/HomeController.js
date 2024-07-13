@@ -1,12 +1,12 @@
-const { mongooseToObject, multipleMongooseToObject } = require('../../util/mongoose')
-
 class HomeController
 {
     // [GET] /
     async homepage(req, res, next)
     {
+        const sessionName = req.session.name
+
         try {
-            await res.render('home', {
+            await res.render('home',  {
                 layout: false,
                 style: [
                     '/css/site.css',
@@ -18,7 +18,8 @@ class HomeController
                     '/js/site.js',
                     '/js/jquery.min.js'
                 ],
-                title: 'Homepage'
+                title: 'Homepage',
+                sessionName
             })
         } catch (error) {
             next(error)

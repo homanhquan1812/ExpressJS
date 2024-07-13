@@ -94,7 +94,7 @@ class ProductsController
         }
     }
 
-    // [POST] /products/edit/:id
+    // [PUT] /products/edit/:id
     async update_a_product(req, res, next) {
         try {
             const { csw_products, type, description, price } = req.body
@@ -110,11 +110,11 @@ class ProductsController
     /*
      * 4. Delete a product
     */
-    // [POST] /products/:id
+    // [DELETE] /products/:id
     async delete_a_product(req, res, next) {
         try {
             await Products.findByIdAndDelete(req.params.id)
-
+            res.redirect('/products')
             /*
              * Mongoose Delete:
                 const product = await Products.findById(req.params.id);
