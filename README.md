@@ -1,4 +1,4 @@
-## Project này gồm tính năng nổi bật gì của NodeJS & ExpressJS?
+# Project này gồm tính năng nổi bật gì của NodeJS & ExpressJS?
 1. `Bcrypt`.
 2. `Middleware`: Là đoạn mã trung gian nằm giữa **req** và **res**, thường được sử dụng để xác thực, ghi log, xử lý lỗi,...
 3. `Rate Limit`.
