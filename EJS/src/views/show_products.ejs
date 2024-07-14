@@ -1,0 +1,35 @@
+<br />
+<h2>List of Products</h2>
+<button type="button" class="btn btn-primary" onclick="window.location.href='/products/add'">Add new product</button>
+<table class="table">
+	<thead>
+		<tr>
+			<th>No</th>
+			<th>Name</th>
+			<th>Type</th>
+			<th style="width: 30%;">Description</th>
+			<th>Price</th>
+			<th style="width: 20%;">Created at</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% products.forEach((product, index) => { %>
+			<tr>
+				<td><%= index + 1 %></td>
+				<td><%= product.csw_products %></td>
+				<td><%= product.type %></td>
+				<td><%= product.description %></td>
+				<td><%= product.price %></td>
+				<td><%= product.createdAt %></td>
+				<td>
+					<a class="btn btn-warning" href="/products/edit/<%= product._id %>">Edit</a>
+					<form method="POST" action="/products/<%= product._id %>?_method=DELETE" style="display: inline;">
+						<button class="btn btn-danger">Delete</button>
+					</form>
+				</td>
+			</tr>
+		<% }) %>
+	</tbody>
+</table>
+<br /><br />

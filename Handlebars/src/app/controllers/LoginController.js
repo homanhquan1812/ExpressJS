@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const Users = require('../models/Users')
+const jwt = require('jsonwebtoken');
 
 class LoginController
 {
@@ -24,7 +25,7 @@ class LoginController
             })
 
             req.session.destroy()
-            res.clearCookie('connect.sid'); // Clear the session cookie
+            // res.clearCookie('connect.sid'); // Clear the session cookie
         } catch (error) {
             next(error)
         }
@@ -52,10 +53,13 @@ class LoginController
                     return res.redirect('/login?error=err');
                 }
                 else {
+                    const token = jwt.sign({ id: usernameMatch._id, username: usernameMatch.username, email: usernameMatch.email }, process.env.SECRET_KEY, { expiresIn: '1h' });
+      
+                    // Save JWT token in session
+                    req.session.jwt = token;
+
                     req.session.username = usernameMatch.username
                     req.session.name = usernameMatch.name
-                    req.session.cookie.expires = new Date(Date.now() + req.session.cookie.maxAge)
-                    req.session.cookie.maxAge = 5 * 60 * 1000 // 5 minutes
                     req.session.logged = true // For header
 
                     return res.redirect('/')

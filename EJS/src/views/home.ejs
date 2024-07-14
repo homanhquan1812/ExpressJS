@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome
+            <% if (sessionName) { %>
+                back, <%= sessionName %>!
+            <% } %>
+        </h1>
+        <p>Let's study building Web apps with NodeJS & ExpressJS.</p>
+    </div>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js"></script>
+    <script src="/js/jquery.min.js"></script>
+
+    <%- include('partials/footer') %>
+</body>
+</html>
