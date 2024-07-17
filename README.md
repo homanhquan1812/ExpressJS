@@ -85,7 +85,7 @@ npm install mongoose-delete
 Ở đây, ta dùng định dạng `.hbs` cho các file Handlebars.
 
 ## Bước 2
-Ta cần hiểu cơ cấu project
+Ta cần hiểu cơ cấu project như sau:
 ```
 Project
   |
@@ -170,6 +170,7 @@ npm install express-ejs-layouts
 ```
 
 ## Bước 2
+Ta cần hiểu cơ cấu project như sau:
 ```
 Project
   |
@@ -251,6 +252,24 @@ Cụ thể hơn:
 Chú ý: Đừng nhét các file `css` vào **Helmet**, sẽ gây lỗi load file CSS chậm.
 
 ## Bước 3
+Ta cần hiểu cơ cấu project như sau:
+```
+Project
+  |
+  |__ backend
+  |__ frontend
+        |__ public
+	      |__ css
+	      |__ img
+	      |__ js
+	|__ src
+	      |__ components
+	      |__ pages
+	      |__ App.jsx
+	      |__ main.jsx
+	|__ (Các file liên quan khác)
+```
+
 Chỉnh sửa 2 mục `App.jsx` và `main.jsx` theo mẫu. Tiếp theo, tạo 2 thư mục `pages` và `components` lần lượt chứa page ReactJS và các thành phần khác như `head`,...; sau đó page bằng cách gõ `rafce` rồi nhét vào thư mục `pages`.
 
 ReactJS sẽ mặc định dùng `http`, nếu muốn dùng `https` thì chỉnh file `vite.config.js`:
