@@ -240,14 +240,34 @@ npm create vite@latest
 
 Sau đó, cài đặt những gói thư viện cần thiết này:
 ```
-npm install react-router-dom react-helmet-async axios
+npm install react-router-dom react-helmet axios
 ```
 
 và cài thêm <b>ES7+ React/Redux/React-Native snippets</b>.
 
 Cụ thể hơn:
 * `react-router-dom`: Dùng để quản lý điều hướng trong website.
-* `react-helmet-async`: Dùng để quản lý các tài nguyên trong `<head>` hoặc **script** trong `<body>`,...
+* `react-helmet`: Dùng để quản lý các tài nguyên trong `<head>` hoặc **script** trong `<body>`,...
+Chú ý: Đừng nhét các file `css` vào **Helmet**, sẽ gây lỗi load file CSS chậm.
 
 ## Bước 3
-Tạo page bằng cách gõ `rafce`
+Chỉnh sửa 2 mục `App.jsx` và `main.jsx` theo mẫu. Tiếp theo, tạo 2 thư mục `pages` và `components` lần lượt chứa page ReactJS và các thành phần khác như `head`,...; sau đó page bằng cách gõ `rafce` rồi nhét vào thư mục `pages`.
+
+ReactJS sẽ mặc định dùng `http`, nếu muốn dùng `https` thì chỉnh file `vite.config.js`:
+```
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import mkcert from 'vite-plugin-mkcert'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [ mkcert(), react() ]
+})
+```
+
+Trước đó hãy cài thêm:
+```
+npm install vite-plugin-mkcert
+```
+
+Gõ lệnh `npm run dev` để chạy website ReactJS.
