@@ -30,13 +30,13 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false } // Set to true if using HTTPS
-}));
+}))
 
 // Make session data available to all views (Mostly for Header + Footer)
 app.use((req, res, next) => {
-  res.locals.session = req.session;
-  next();
-});
+  res.locals.session = req.session
+  next()
+})
 
 // Path
 app.set('views', path.join(__dirname, 'resources/views'))

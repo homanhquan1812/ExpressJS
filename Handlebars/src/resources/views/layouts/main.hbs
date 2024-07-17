@@ -6,8 +6,6 @@
         </title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ld5kg8qAAAAACwugTR79VbwpLP0YrI0Oog1ZrZl"></script>
-        
         {{#if style}}
             {{#each style}}
                 <link type="text/css" rel="stylesheet" href="{{this}}">
@@ -29,14 +27,5 @@
                 <script type="text/javascript" src="{{this}}"></script>
             {{/each}}
         {{/if}}
-
-        <script>
-            function onClick(e) {
-                e.preventDefault();
-                grecaptcha.enterprise.ready(async () => {
-                const token = await grecaptcha.enterprise.execute('6Ld5kg8qAAAAACwugTR79VbwpLP0YrI0Oog1ZrZl', {action: 'LOGIN'});
-                });
-            }
-        </script>
     </body>
 </html>
