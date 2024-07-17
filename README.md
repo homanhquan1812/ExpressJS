@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fphm9w85asky1ja15jg4y.png" alt="NodeJS + ExpressJS Logo" width="600">
+</div>
+
 # Project này gồm tính năng nổi bật gì của NodeJS & ExpressJS?
 1. `Bcrypt`.
 2. `Middleware`: Là đoạn mã trung gian nằm giữa **req** và **res**, thường được sử dụng để xác thực, ghi log, xử lý lỗi,...
@@ -160,7 +164,7 @@ Cụ thể hơn:
 ```
 npm install ejs
 ```
-* **EJS Layouts***: Không giống như **Handlebars**, ta phải cài thêm **layouts** để chứa các file page.
+* **EJS Layouts**: Không giống như **Handlebars**, ta phải cài thêm **layouts** để chứa các file page.
 ```
 npm install express-ejs-layouts
 ```
@@ -202,3 +206,48 @@ Project
 
 ## Bước 3
 Tương tự như ở trên, ta sẽ có 1 website y chang **Handlebars**.
+
+# ReactJS
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/f8e7f629-912e-4917-92e0-2536e2434014" alt="NodeJS + ExpressJS Logo" width="600">
+</div>
+
+## Bước 1
+Mở Terminal của thư mục `backend` lên, tạo tài nguyên backend bằng cách chạy:
+```
+npm init
+```
+rồi hoàn thành quy trình cài đặt đầu tiên.
+
+Sau đó, cài đặt những gói thư viện cần thiết này:
+```
+npm install express nodemon morgan mongoose cors method-override dotenv bcrypt express-session express-rate-limit fs jsonwebtoken
+```
+
+Cụ thể hơn:
+* `CORS (Cross-origin resource sharing)`: à một cơ chế cho phép nhiều tài nguyên khác nhau của một trang web có thể được truy vấn từ domain khác với domain của trang đó.
+```
+npm install cors
+```
+
+## Bước 2
+Mở Terminal của thư mục dự án lên, tạo tài nguyên frontend bằng cách chạy:
+```
+npm create vite@latest
+```
+Đặt tên là `frontend`, rồi hoàn thành quy trình cài đặt đầu tiên (Chọn `React` + `Javascript`).
+
+Sau đó, cài đặt những gói thư viện cần thiết này:
+```
+npm install react-router-dom react-helmet-async axios
+```
+
+và cài thêm <b>ES7+ React/Redux/React-Native snippets</b>.
+
+Cụ thể hơn:
+* `react-router-dom`: Dùng để quản lý điều hướng trong website.
+* `react-helmet-async`: Dùng để quản lý các tài nguyên trong `<head>` hoặc **script** trong `<body>`,...
+
+## Bước 3
+Tạo page bằng cách gõ `rafce`
