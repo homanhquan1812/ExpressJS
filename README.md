@@ -290,3 +290,10 @@ npm install vite-plugin-mkcert
 ```
 
 Gõ lệnh `npm run dev` để chạy website ReactJS.
+
+1 vài status từ các lệnh thực thi CRUD trên dữ liệu JSON:
+* `200`: Lấy, cập nhật, xóa dữ liệu thành công.
+* `201`: Tạo dữ liệu thành công.
+* `401`: Lỗi xác thực (Login, Register,...).
+* `404`: Không tìm thấy dữ liệu.
+* `500`: Lỗi server (Thường xảy ra ở Backend như code không phù hợp,...).
