@@ -86,6 +86,10 @@ npm install express-rate-limit
 npm install fs
 ```
 * **JWT (JSON Web Token)**: Là một tiêu chuẩn mở cho việc tạo ra các token truy cập an toàn dựa trên JSON, thường được sử dụng để xác thực và ủy quyền người dùng trong ứng dụng web và di động.
+
+Thông thường, nếu so với `Session`:
+   * `Session`: Bảo mật tốt hơn. Nhược điểm là nếu hoạt động nhiều server cùng 1 lúc, session ID gửi kèm theo request thì có thể tìm thấy ở server này nhưng lại không ở server khác, dẫn đến trải nghiệm tồi tệ.
+   * `JWT`: Hiệu suất và khả năng mở rộng tốt hơn vì token được lưu ở phía **Client**, không phải ở phía **Server** như `Session` nên tối ưu bộ nhớ hơn. Nhược điểm là: JWT chứa thông tin người dùng nhiều hơn so với Session ID và phải cẩn thận về vấn đề bảo mật hơn như lưu trữ token,...
 ```
 npm install jsonwebtoken
 ```
