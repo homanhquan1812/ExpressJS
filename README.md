@@ -8,6 +8,18 @@
 3. `Rate Limit`.
 4. `Session & Cookie`.
 5. `JWT (JSON Web Token)`.
+6. `API Key Generator`: Tạo ra các đoạn mã như `SECRET_KEY`,... để bỏ vào trong file `.env`.
+Cách chạy: Vào thư mục `util`, gõ:
+```
+node key_generation.js
+```
+
+1 vài status từ các lệnh thực thi **CRUD** trên dữ liệu JSON:
+* `200`: Lấy, cập nhật, xóa dữ liệu thành công.
+* `201`: Tạo dữ liệu thành công.
+* `401`: Lỗi xác thực (Login, Register,...).
+* `404`: Không tìm thấy dữ liệu.
+* `500`: Lỗi server (Thường xảy ra ở Backend như code không phù hợp,...).
 
 # Handlebars
 <div align="center">
@@ -208,7 +220,7 @@ Project
 ## Bước 3
 Tương tự như ở trên, ta sẽ có 1 website y chang **Handlebars**.
 
-# ReactJS
+# ReactJS (MongoDB)
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/f8e7f629-912e-4917-92e0-2536e2434014" alt="NodeJS + ExpressJS Logo" width="600">
@@ -291,9 +303,26 @@ npm install vite-plugin-mkcert
 
 Gõ lệnh `npm run dev` để chạy website ReactJS.
 
-1 vài status từ các lệnh thực thi CRUD trên dữ liệu JSON:
-* `200`: Lấy, cập nhật, xóa dữ liệu thành công.
-* `201`: Tạo dữ liệu thành công.
-* `401`: Lỗi xác thực (Login, Register,...).
-* `404`: Không tìm thấy dữ liệu.
-* `500`: Lỗi server (Thường xảy ra ở Backend như code không phù hợp,...).
+# ReactJS (PostgreSQL/MySQL)
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/f8e7f629-912e-4917-92e0-2536e2434014" alt="NodeJS + ExpressJS Logo" width="600">
+</div>
+
+> Về cơ bản, thay đổi database chỉ ảnh hưởng tới **backend**, không ảnh hưởng tới **frontend**.
+
+## PostgreSQL
+Cài thêm thư viện sau ở backend:
+* `pg`: Chứa các dữ liệu cần thiết để kết nối database PostgreSQL.
+```
+npm install pg
+```
+
+## MySQL
+Cài thêm thư viện sau ở backend:
+* `mysql2`: Chứa các dữ liệu cần thiết để kết nối database MySQL (Bản `mysql2` tốt hơn `mysql`).
+```
+npm install mysql2
+```
+
+**Known issues**: Bảng **products** có constraint **NOT NULL** nên trong phần edit, phải thay đổi **tất cả các dòng** (chỉ cần viết lại cũng được), nếu không thì những dòng không chỉnh sửa sẽ trả về **NULL**.
