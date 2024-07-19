@@ -1,0 +1,971 @@
+[{
+  "_id": {
+    "$oid": "658ce03323d6b21914d63947"
+  },
+  "csw_products": "Sesame Baguette Salad",
+  "type": "Bread",
+  "description": "Go along with the soft sesame bread is ham, cheese and fresh lettuce and tomato.",
+  "price": 250000,
+  "photo": [
+    "https://burpple-1.imgix.net/foods/62ff74b3f0933f695a21638961_original.?w=645&amp;dpr=1&amp;fit=crop&amp;q=80&amp;auto=format"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:40:51.121Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T12:16:45.885Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce05223d6b21914d63955"
+  },
+  "csw_products": "Sausage Danish",
+  "type": "Bread",
+  "description": "The crispy danish skin inside with chunky sausage and more extra flavor by chicken floss and mayonnaise sauce.",
+  "price": 25000,
+  "photo": [
+    "https://abcbakery.co/wp-content/uploads/Bread07-.png"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:41:22.799Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:41:22.799Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce0d1eb6bf7226670e443"
+  },
+  "csw_products": "Brioche Rolls (4ct)",
+  "type": "Bread",
+  "description": "Contains: Wheat four, eggs, butter, milk.",
+  "price": 30000,
+  "photo": [
+    "https://od-prod-content.s3.us-east-2.amazonaws.com/10000281/menuItemMaster/images/774345.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:43:29.777Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:43:29.777Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce0f7eb6bf7226670e45d"
+  },
+  "csw_products": "Sausage Bun",
+  "type": "Bread",
+  "description": "Small size flavorful pizza with sausage, minced jambon and melted cheese.",
+  "price": 35000,
+  "photo": [
+    "https://www.elmundoeats.com/wp-content/uploads/2019/07/Chinese-Sausage-Bread.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:44:07.786Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:44:07.786Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce188eb6bf7226670e492"
+  },
+  "csw_products": "Cheesy Pork Floss",
+  "type": "Bread",
+  "description": "Fresh bread, combine with tasty floss and creamy slightly mayonnaise.",
+  "price": 40000,
+  "photo": [
+    "https://www.boulangerie22.ph/Product/GetPhoto?barcode=ABI00005552"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:46:32.519Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:46:32.519Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce1caeb6bf7226670e4a0"
+  },
+  "csw_products": "Baguette",
+  "type": "Bread",
+  "description": "The golden baguette with crispy skin outside and moist inside.",
+  "price": 10000,
+  "photo": [
+    "https://od-prod-content.s3.us-east-2.amazonaws.com/10000281/menuItemMaster/images/773966.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:47:38.887Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:47:38.887Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce1fdeb6bf7226670e4ae"
+  },
+  "csw_products": "Apple Pie",
+  "type": "Pastries",
+  "description": "Indulge in the rich flavors of our Apple Pie with a perfect blend of wheat flour, luscious apple pie filling, and a tantalizing glaze. The golden crust and delightful ingredients make each bite a heavenly experience.",
+  "price": 19000,
+  "photo": [
+    "https://od-prod-content.s3.us-east-2.amazonaws.com/10000281/menuItemMaster/images/774394.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:48:29.948Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:48:29.948Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce226eb6bf7226670e4bc"
+  },
+  "csw_products": "Chocolate Bar Danish",
+  "type": "Pastries",
+  "description": "A perfect treat for chocolate lovers, this pastry promises a delightful blend of flaky pastry and rich chocolate flavor.",
+  "price": 29000,
+  "photo": [
+    "https://aihuebakery.vn/uploads/photos/2020/10/19/aihuebakery-mtt2s1603077538.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:49:10.244Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:49:10.244Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce246eb6bf7226670e4ca"
+  },
+  "csw_products": "Blueberry Mung Bean Bun",
+  "type": "Pastries",
+  "description": "The beautiful and sweet blueberry jam with soft and delicious mung bean bun is such a perfect two.",
+  "price": 31000,
+  "photo": [
+    "https://abcbakery.co/wp-content/uploads/Pastry07-.png"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:49:42.761Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:49:42.761Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce25eeb6bf7226670e4d8"
+  },
+  "csw_products": "Taro Bun",
+  "type": "Pastries",
+  "description": "The savory and unique taste of taro will be more fantastic with those almond slices.",
+  "price": 23000,
+  "photo": [
+    "https://abcbakery.co/wp-content/uploads/Pastry06-.png"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:50:06.868Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:50:06.868Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce288eb6bf7226670e4e6"
+  },
+  "csw_products": "Chocolate Chip Bun",
+  "type": "Pastries",
+  "description": "Feel the unforgettable chocolate flavored in each bite.",
+  "price": 20000,
+  "photo": [
+    "https://foodandjourneys.net/wp-content/uploads/2021/07/German-Chocolate-Buns-Schokobrotchen.PIC6_.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:50:48.444Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:50:48.444Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce2e3eb6bf7226670e4f4"
+  },
+  "csw_products": "Custard Wormie Bread",
+  "type": "Pastries",
+  "description": "Do you want to try this plump, fluffy custard wormie?",
+  "price": 32000,
+  "photo": [
+    "https://cdn.store-assets.com/s/630301/i/20102376.jpg?width=1024&format=webp"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:52:19.431Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:52:19.431Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce2fceb6bf7226670e502"
+  },
+  "csw_products": "Coconut Bun",
+  "type": "Pastries",
+  "description": "With the special sweet and rich taste of coconut go along the soft fresh bread make a perfect combination.",
+  "price": 24000,
+  "photo": [
+    "https://healthynibblesandbits.com/wp-content/uploads/2021/08/Coconut-Buns-3.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:52:44.554Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:52:44.554Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce31eeb6bf7226670e510"
+  },
+  "csw_products": "Choux Cream",
+  "type": "Pastries",
+  "description": "The light, fluffy and creamy choux cream match made in food heaven.",
+  "price": 40000,
+  "photo": [
+    "https://www.theflavorbender.com/wp-content/uploads/2019/03/Salted-Caramel-Choux-au-Craquelin-9433.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:53:18.869Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:53:18.869Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce33beb6bf7226670e51e"
+  },
+  "csw_products": "Croissant",
+  "type": "Pastries",
+  "description": "Taste croissant with the crunchiness of skin and softness of interior.",
+  "price": 12000,
+  "photo": [
+    "https://od-prod-content.s3.us-east-2.amazonaws.com/10000281/menuItemMaster/images/774383.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:53:47.188Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:53:47.188Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce354eb6bf7226670e52c"
+  },
+  "csw_products": "Chocolate Croissant",
+  "type": "Pastries",
+  "description": "A perfect treat for chocolate lovers, this pastry promises a delightful blend of flaky pastry and rich chocolate flavor.",
+  "price": 15000,
+  "photo": [
+    "https://od-prod-content.s3.us-east-2.amazonaws.com/10000281/menuItemMaster/images/774103.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:54:12.221Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:54:12.221Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce386eb6bf7226670e53a"
+  },
+  "csw_products": "Egg Tart",
+  "type": "Pastries",
+  "description": "Enjoy the delightful combination of a tart shell, egg, and milk in every bite of our Egg Tart. A perfect balance of flavors that will leave you wanting more.",
+  "price": 15000,
+  "photo": [
+    "https://www.tastingtable.com/img/gallery/portuguese-egg-tart-recipe-pastry/intro-1641242937.webp"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:55:02.703Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:55:02.703Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce3abeb6bf7226670e548"
+  },
+  "csw_products": "Sugar Mochi Donut",
+  "type": "Pastries",
+  "description": "Delight in the unique combination of tapioca starch, sugar, egg, milk, and wheat in our Sugar Mochi Donut. A mouthwatering treat that brings together the best of sweet and chewy textures. ",
+  "price": 15000,
+  "photo": [
+    "https://od-prod-content.s3.us-east-2.amazonaws.com/10000281/menuItemMaster/images/837258.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:55:39.693Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:55:39.693Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce428eb6bf7226670e556"
+  },
+  "csw_products": "Orange Vani",
+  "type": "Cake Slice",
+  "description": "Feel the orange flavored blended with rich, creamy mousse and soft sponge cake.",
+  "price": 18000,
+  "photo": [
+    "https://abcbakery.co/wp-content/uploads/SliCake09-.png"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:57:44.477Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:57:44.477Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce446eb6bf7226670e564"
+  },
+  "csw_products": "Blueberry Vani",
+  "type": "Cake Slice",
+  "description": "Four layers cake by two solf, fresh sponge cake layers, rich creamy mousse layer and last but not least is the devilishly good blueberry mousse layer.",
+  "price": 25000,
+  "photo": [
+    "https://abcbakery.co/wp-content/uploads/SliCake08-.png"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:58:14.723Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:58:14.723Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce463eb6bf7226670e572"
+  },
+  "csw_products": "Strawberry Dome",
+  "type": "Cake Slice",
+  "description": "The yummy dome made from sweet mousse and lovely fresh milk cream.",
+  "price": 27000,
+  "photo": [
+    "https://media01.stockfood.com/largepreviews/MTg2Njc1NzkzOA==/60217998-Strawberry-dome-tartlets.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T02:58:43.996Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T02:58:43.996Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce50eeb6bf7226670e639"
+  },
+  "csw_products": "Chocolate Cocoa",
+  "type": "Cake Slice",
+  "description": "Experience the perfection flavor from fresh sponge cake, fluffy mousse and enjoyable chocolate.",
+  "price": 17000,
+  "photo": [
+    "https://abcbakery.co/wp-content/uploads/SliCake06-.png"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:01:34.674Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:01:34.674Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce53aeb6bf7226670e647"
+  },
+  "csw_products": "Carrot Cake",
+  "type": "Cake Slice",
+  "description": "With the combination between carrot, walnuts, unsalted butter and cheese just fit enough for a queen.",
+  "price": 26000,
+  "photo": [
+    "https://abcbakery.co/wp-content/uploads/SliCake05-Carrot-Cake.png"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:02:18.956Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:02:18.956Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce558eb6bf7226670e655"
+  },
+  "csw_products": "Mini Black Forest",
+  "type": "Cake Slice",
+  "description": "The small size of black forest but still keep the characteristic flavor from the big one.",
+  "price": 21000,
+  "photo": [
+    "https://abcbakery.co/wp-content/uploads/SliCake04-Mini-Black-Forest.png"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:02:48.146Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:02:48.146Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce58deb6bf7226670e663"
+  },
+  "csw_products": "Marble Cheesecake",
+  "type": "Cake Slice",
+  "description": "Rich flavor from anchor cheese combine with the sweet of white and black chocolate created an unbeatable marble cheesecake.",
+  "price": 26000,
+  "photo": [
+    "https://abcbakery.co/wp-content/uploads/SliCake03-.png"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:03:41.198Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:03:41.198Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce59eeb6bf7226670e671"
+  },
+  "csw_products": "Lemon Cream Cake",
+  "type": "Cake Slice",
+  "description": "The small cream cake with light lemon flavor will fresh all you senses.",
+  "price": 40000,
+  "photo": [
+    "https://abcbakery.co/wp-content/uploads/SliCake02-.png"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:03:58.118Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:03:58.118Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce5c1eb6bf7226670e67f"
+  },
+  "csw_products": "Chocolate Almond Cake",
+  "type": "Cake Slice",
+  "description": "Made from moist brown and black sponge cake, with dark chocolate and sliced almond will bring along the sweetness flavor with you.",
+  "price": 14000,
+  "photo": [
+    "https://cravingsjournal.com/wp-content/uploads/2020/06/almond-chocolate-cake-4.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:04:33.653Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:04:33.653Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce61beb6bf7226670e68d"
+  },
+  "csw_products": "Icecream Cheesecake",
+  "type": "Cheesecake",
+  "description": "Icecream Cheesecake is the perfect choice for any moment, whether it's a birthday, anniversary, or just a special gift for your loved ones. Try Icecream Cheesecake today and experience the perfect combination of flavor and texture.",
+  "price": 18000,
+  "photo": [
+    "https://jamiegeller.com/.image/c_limit,cs_srgb,q_auto:good,w_700/MTY1NTI1MTg2Mzg3NzgxMTU4/ice-cream-cheesecake-pie-82jpg.webp"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:06:03.431Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:06:03.431Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce75feb6bf7226670e6da"
+  },
+  "csw_products": "Cheeseo",
+  "type": "Cheesecake",
+  "description": "Made with the main ingredient being cheese, this cake is suitable for both hot and cold consumption. However, Vanie Nguyen recommends serving it cold to enhance the dense cheese flavor.",
+  "price": 25000,
+  "photo": [
+    "https://www.shutterstock.com/image-photo/cheesee-nacos-yummy-food-close-600nw-2414473455.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:11:27.484Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:11:27.484Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce85ef7fe854cf3ee67b0"
+  },
+  "csw_products": "Tiramisu",
+  "type": "Cheesecake",
+  "description": "Tiramisu is a classic Italian dessert that has become popular worldwide. It features coffee-flavored layers of sponge cake soaked in espresso and rum, and a premium cream made from mascarpone cheese, eggs, and sugar. It also includes cocoa powder for a sweet contrast.",
+  "price": 27000,
+  "photo": [
+    "https://static01.nyt.com/images/2017/04/05/dining/05COOKING-TIRAMISU1/05COOKING-TIRAMISU1-googleFourByThree-v2.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:15:42.131Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:15:42.131Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce8cef7fe854cf3ee67be"
+  },
+  "csw_products": "Tofu Cheesecake",
+  "type": "Cheesecake",
+  "description": "This cake has a fascinating creamy texture and interesting flavor. Soybeans, the main ingredient, provide protein, fiber, and antioxidants that may help protect against cancer and heart disease.",
+  "price": 21000,
+  "photo": [
+    "https://2.bp.blogspot.com/-AsOaYXfosa8/VD50FSeAF5I/AAAAAAAAAE0/8kwKjqSQl3A/s1600/Tofu%2BCheeseCake.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:17:34.107Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:17:34.107Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce8e2f7fe854cf3ee67cc"
+  },
+  "csw_products": "Strawberry Tart Cheese",
+  "type": "Cheesecake",
+  "description": "The first highlight of Tart Cheese Strawberry is a collection of beautiful fresh strawberries on the cake's surface, not only creating an attractive appearance but also ensuring a delightful eating experience. Strawberries are rich in antioxidants, vitamin C, and fiber, offering many health benefits.",
+  "price": 30000,
+  "photo": [
+    "https://static01.nyt.com/images/2023/05/24/multimedia/24apperex2-galette-lfwz/24apperex2-galette-lfwz-superJumbo.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:17:54.689Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:17:54.689Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce94d06439f8fe38e8ab3"
+  },
+  "csw_products": "Japanese Cotton Cheesecake",
+  "type": "Cheesecake",
+  "description": "Every Japanese Cotton Cheesecake is served with fresh whole strawberries, a fruit available year-round and rich in vitamin C, fiber, and antioxidants. They create an explosion of color and flavor, making the cake even more enticing and satisfying.",
+  "price": 45000,
+  "photo": [
+    "https://runawayrice.com/wp-content/uploads/2014/05/Cotton-Cheesecake-Japanese-Cheesecake.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:19:41.910Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:19:41.910Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce97c06439f8fe38e8ac1"
+  },
+  "csw_products": "Mango Cheese Bathed Buns",
+  "type": "Cheesecake",
+  "description": "Unique cream cheese with a fragrant mango taste on the tip of the tongue, ensuring a creamy and satisfying cheese aftertaste. The addition of mango jelly and pure mango sauce with its shiny yellow color adds an impressive touch to the taste buds.",
+  "price": 39000,
+  "photo": [
+    "https://static1.straitstimes.com.sg/s3fs-public/styles/large30x20/public/articles/2017/08/10/star2a.jpg?VersionId=vPecdIkuKux3FwI5OV1QMoqvUp9aHRNH&itok=xhX8dikT"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:20:28.711Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:20:28.711Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce99b06439f8fe38e8acf"
+  },
+  "csw_products": "Mushroom Sauce",
+  "type": "Bread",
+  "description": "Delicious bread baked come from irresistible mushroom sauce and ham.",
+  "price": 34000,
+  "photo": [
+    "https://www.recipetineats.com/wp-content/uploads/2018/09/Creamy-Mushroom-Sauce_3.jpg?resize=650,910"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:20:59.917Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:20:59.917Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce9b806439f8fe38e8add"
+  },
+  "csw_products": "Pizza",
+  "type": "Bread",
+  "description": "On top of the soft, airy dough is wonderful rich cheese, sausage and green bell pepper.",
+  "price": 42000,
+  "photo": [
+    "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/94/2023/10/02/Snapinstaapp_383855421_1711116049313714_84421771234308923_n_1080-2136112196.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:21:28.869Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:21:28.869Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658ce9f806439f8fe38e8aeb"
+  },
+  "csw_products": "Pepsi",
+  "type": "Drinks",
+  "description": "",
+  "price": 17000,
+  "photo": [
+    "https://product.hstatic.net/1000141988/product/nuoc_ngot_pepsi_lon_320_ml_415ef91bdb15487ab3079155c3635f66.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:22:32.676Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:22:32.676Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658cea1f06439f8fe38e8af9"
+  },
+  "csw_products": "7-UP",
+  "type": "Drinks",
+  "description": "",
+  "price": 17000,
+  "photo": [
+    "https://product.hstatic.net/1000141988/product/nuoc_ngot_7up_huong_chanh_lon_330_ml_63d1cee15d314dc39522d5e83784d4d4.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:23:11.376Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:23:11.376Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658cea6906439f8fe38e8b07"
+  },
+  "csw_products": "Sting",
+  "type": "Drinks",
+  "description": "",
+  "price": 17000,
+  "photo": [
+    "https://gourmetfoods.vn/wp-content/uploads/2021/07/sting.png"
+  ],
+  "deleted": true,
+  "createdAt": {
+    "$date": "2023-12-28T03:24:25.182Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-05T20:57:47.388Z"
+  },
+  "__v": 0,
+  "deletedAt": {
+    "$date": "2024-01-05T20:57:47.387Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "658cee706639e062155752fd"
+  },
+  "csw_products": "Strawberry Lychee Iced Tea",
+  "type": "Drinks",
+  "description": "The combination of lychee, orange and strawberry along with the cool aroma of tea will help you beat the summer heat. These are all toppings that are quite easy to eat, full of sweetness, sourness and aroma, creating a drink that blends all the colors and flavors worth enjoying with your friends.",
+  "price": 27000,
+  "photo": [
+    "https://www.arkadiabeverages.com.au/assets/main/RECIPES/_800xAUTO_crop_center-center_none/Strawberry-Lychee-Iced-Tea-recipe-thumb-350x350.png"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:41:36.329Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:41:36.329Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658cef166639e0621557530b"
+  },
+  "csw_products": "Lychee Green Tea Freeze",
+  "type": "Drinks",
+  "description": "Different from a traditional cup of lychee tea, in this drink you will clearly feel the characteristic taste of green tea combined with pureed and cooled lychee, adding a layer of floating foam on the surface that everyone will love.",
+  "price": 35000,
+  "photo": [
+    "https://dvpmarket.com/resources/uploads/thang_102019/tra-vai-green-lychee.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:44:22.358Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:44:22.358Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658cef9a6639e06215575319"
+  },
+  "csw_products": "Passion Fruit Green Tea Macchiato",
+  "type": "Drinks",
+  "description": "Beat the heat with the brand new sweet and sour tropical flavour combined with the smooth and creamy macchiato cream~",
+  "price": 28000,
+  "photo": [
+    "https://d1u57wxxsxzpd6.cloudfront.net/cbdcab36-55e3-4aba-8fb2-1856009c3677_image.jpeg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:46:34.253Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:46:34.253Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658cf0126639e06215575327"
+  },
+  "csw_products": "Red Dragon Fruit & Pineapple",
+  "type": "Drinks",
+  "description": "It's blended with Jasmine Green Tea, topped with aloe and cheese foam. It's pretty and refreshing without being overly sweet. (No syrup added)",
+  "price": 33000,
+  "photo": [
+    "https://cl-drupal.orientaltrading.com/sites/default/files/recipes/hero/desktop/2x/pineapple-dragon-fruit-smoothie_hero.jpg"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:48:34.996Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:48:34.996Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658cf0556639e06215575335"
+  },
+  "csw_products": "Gelato",
+  "type": "Ice Cream",
+  "description": "This cold treat is creamy, decadent, and melt-in-your-mouth delicious. Essentially, it’s richer and denser than other ice cream types. Plus, it has less sugar and is lower in fat, making it perfect for indulging.",
+  "price": 19000,
+  "photo": [
+    "https://insanelygoodrecipes.com/wp-content/uploads/2022/10/Sherbet.webp"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:49:41.865Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:49:41.865Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658cf0726639e06215575343"
+  },
+  "csw_products": "Sherbet",
+  "type": "Ice Cream",
+  "description": "It’s a bit fizzy, a little sweet, and a whole lot of fun!  This frozen treat comes in different flavors and is perfect if you want sweet-tart combos.",
+  "price": 15000,
+  "photo": [
+    "https://insanelygoodrecipes.com/wp-content/uploads/2022/10/Sorbet.webp"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:50:10.911Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-28T03:50:10.911Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658cf0ab6639e06215575351"
+  },
+  "csw_products": "Sorbet",
+  "type": "Ice Cream",
+  "description": "This frozen delight has little to no dairy. Instead, it features a mix of fruit juice or purée, sweetened water, and egg whites.  It’s perfect if you want a boozy kick to your cold dessert. You can add a drizzle of wine or liqueur for the perfect party treat.",
+  "price": 100002,
+  "photo": [
+    "https://insanelygoodrecipes.com/wp-content/uploads/2022/10/Frozen-Yogurt-1.webp"
+  ],
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-12-28T03:51:07.851Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T12:31:16.812Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6697b9e7577d72efbaeac222"
+  },
+  "csw_products": "Sorbet",
+  "type": "Ice Cream",
+  "description": "This frozen delight has little to no dairy. Instead, it features a mix of fruit juice or purée, sweetened water, and egg whites.  It’s perfect if you want a boozy kick to your cold dessert. You can add a drizzle of wine or liqueur for the perfect party treat.",
+  "price": 1000078,
+  "createdAt": {
+    "$date": "2024-07-17T12:32:39.982Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T12:32:39.982Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6697ba0a00f40d5f390ebf28"
+  },
+  "csw_products": "Sorbet",
+  "type": "Ice Cream",
+  "description": "This frozen delight has little to no dairy. Instead, it features a mix of fruit juice or purée, sweetened water, and egg whites.  It’s perfect if you want a boozy kick to your cold dessert. You can add a drizzle of wine or liqueur for the perfect party treat.",
+  "price": 1000078,
+  "createdAt": {
+    "$date": "2024-07-17T12:33:14.976Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T12:33:14.976Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6697ba6200f40d5f390ebf43"
+  },
+  "csw_products": "Sorbet 2",
+  "type": "Ice Cream",
+  "description": "This frozen delight has little to no dairy. Instead, it features a mix of fruit juice or purée, sweetened water, and egg whites.  It’s perfect if you want a boozy kick to your cold dessert. You can add a drizzle of wine or liqueur for the perfect party treat.",
+  "price": 1000078757,
+  "createdAt": {
+    "$date": "2024-07-17T12:34:42.016Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T12:35:32.111Z"
+  },
+  "__v": 0
+}]

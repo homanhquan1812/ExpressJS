@@ -13,32 +13,31 @@ class LoginController
             const usernameMatch = await Users.findOne({ username: username })
             
             if (!usernameMatch) {
-                res.status(401).json({
+                return res.status(401).json({
                     message: 'This username doesn\'t exists.'
                 })
             }
-            else {
-                // Check user's password
-                const isMatch = await bcrypt.compare(password, usernameMatch.password)
-                if (!isMatch) {
-                    res.status(401).json({
-                        message: 'Password is incorrect.'
-                    })
-                }
-                else {
-                    const token = jwt.sign({ id: usernameMatch._id, username: usernameMatch.username, name: usernameMatch.name }, process.env.SECRET_KEY, { expiresIn: '1h' })
-      
-                    // Send JWT token and user info as JSON response
-                    res.json({
-                        message: 'Login successful',
-                        token: token,
-                        user: {
-                            username: usernameMatch.username,
-                            name: usernameMatch.name
-                        }
-                    })
-                }
+
+            // Check user's password
+            const isMatch = await bcrypt.compare(password, usernameMatch.password)
+
+            if (!isMatch) {
+                return res.status(401).json({
+                    message: 'Password is incorrect.'
+                })
             }
+
+            const token = jwt.sign({ id: usernameMatch._id, username: usernameMatch.username, name: usernameMatch.name }, process.env.SECRET_KEY, { expiresIn: '1h' })
+  
+            // Send JWT token and user info as JSON response
+            res.json({
+                message: 'Login successful',
+                token: token,
+                user: {
+                    username: usernameMatch.username,
+                    name: usernameMatch.name
+                }
+            })
         } catch (error) {
             next(error)
         }

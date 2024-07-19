@@ -1,0 +1,278 @@
+[{
+  "_id": {
+    "$oid": "6691d865af4e4c772022817b"
+  },
+  "name": "Ho Manh Quan",
+  "username": "homanhquan1812",
+  "password": "12345678"
+},
+{
+  "_id": {
+    "$oid": "6691f78860b5e9cd849dc5bf"
+  },
+  "name": "Sussyboy",
+  "username": "123",
+  "password": "123",
+  "createdAt": {
+    "$date": "2024-07-13T03:42:00.457Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-13T03:42:00.457Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66920e68450ba4c5c7fa6e8b"
+  },
+  "name": "Vu Thi Minh",
+  "username": "1234",
+  "password": "1234",
+  "createdAt": {
+    "$date": "2024-07-13T05:19:36.735Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-13T05:19:36.735Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669239e72746e599943b7561"
+  },
+  "name": "Sussyboy2",
+  "username": "12345",
+  "password": "$2b$10$mcdn42mWMPB/s3Nq5mTaBOpCQoy70ByHo0zRzFbBIMpsBDeC9kdMO",
+  "createdAt": {
+    "$date": "2024-07-13T08:25:11.119Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-13T08:25:11.119Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669243f4656ff8fe4d8312c4"
+  },
+  "name": "Hồ Mạnh Quân",
+  "username": "123456",
+  "password": "$2b$10$bXi.MfQEe2Jw/YXULkCq0.ZL96yESTIyEJl8QVMkIMID.Xn6.fSEi",
+  "createdAt": {
+    "$date": "2024-07-13T09:08:04.545Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-13T09:08:04.545Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6693700511c0534f4765af78"
+  },
+  "name": "Vu Thi Minh1",
+  "username": "1234567",
+  "password": "$2b$10$f6zJblyYfLYrHYCaMTYVN.8r/570pcYk0LPNFBJZXXLGzMHqfOs32",
+  "createdAt": {
+    "$date": "2024-07-14T06:28:21.228Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-14T06:28:21.228Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669389b8713e9b6437df445f"
+  },
+  "name": "Sussyboy",
+  "username": "12345678",
+  "password": "$2b$10$z7Kevl9zn.mWtmi5IV.WwOc8ulHb1LahLE/OdYdMEdDH/pcX5Wqg6",
+  "createdAt": {
+    "$date": "2024-07-14T08:18:00.506Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-14T08:18:00.506Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66953bd9ea2279c1e7572176"
+  },
+  "name": "Hồ Mạnh Quân",
+  "username": "012",
+  "password": "$2b$10$gB.36nkpvgB0raKhSbGLP.7PTFI63sZxUgix2TDfH2l3F/5TPaPqu",
+  "createdAt": {
+    "$date": "2024-07-15T15:10:17.767Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-15T15:10:17.767Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66953bf2ea2279c1e757217a"
+  },
+  "name": "Hồ Mạnh Quân",
+  "username": "0123",
+  "password": "$2b$10$WSZXpDWzc4yB8d9sOjnSKe9b1/TRjILqpuG0.mBt3ETghjrY2dBZm",
+  "createdAt": {
+    "$date": "2024-07-15T15:10:42.802Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-15T15:10:42.802Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669541039d76703f62663cdd"
+  },
+  "name": "Hồ Mạnh Quân",
+  "username": "01234",
+  "password": "$2b$10$DSVU0ZBP8skD7uykeLf.sO.mgSbSQOIn71arfTDTpt.CQgHZslmx2",
+  "createdAt": {
+    "$date": "2024-07-15T15:32:19.023Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-15T15:32:19.023Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669542899d76703f62663ce1"
+  },
+  "name": "Hồ Mạnh Quân",
+  "username": "012345",
+  "password": "$2b$10$008T04Nx90nzhHjRfA5AhuUgI9tMtPJE.NhEvBqBBNfSK4a.c00Xe",
+  "createdAt": {
+    "$date": "2024-07-15T15:38:49.999Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-15T15:38:49.999Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6697b6c7ff9f0aa081b7c991"
+  },
+  "name": "789",
+  "username": "789",
+  "password": "$2b$10$HNmlrFzoYpZ4./6NZvaNk.sOj5jYjeFJJcxKz5QDZqd3lXh5yXWsW",
+  "createdAt": {
+    "$date": "2024-07-17T12:19:19.394Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T12:19:19.394Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6697b6e4ff9f0aa081b7c995"
+  },
+  "name": "789",
+  "username": "7890",
+  "password": "$2b$10$M3GGpm.T1cx1foj6wnNiXee8EoE7Nm9fFn3WDSkq7wxcwmd7AV8ji",
+  "createdAt": {
+    "$date": "2024-07-17T12:19:48.543Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T12:19:48.543Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6697b74c1ac9f69513275b82"
+  },
+  "name": "789",
+  "username": "78901",
+  "password": "$2b$10$t412slsE4urqduboXj15uO466wtoApGl61OhVzQ6mjnS.d95axvne",
+  "createdAt": {
+    "$date": "2024-07-17T12:21:32.533Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T12:21:32.533Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6697b75a1ac9f69513275b88"
+  },
+  "name": "789",
+  "username": "789012",
+  "password": "$2b$10$hcJwfVNbJaL/FxDZY9g3/OyJtYo34GghxE4ssa2Qbu0BDd9XkasKC",
+  "createdAt": {
+    "$date": "2024-07-17T12:21:46.676Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T12:21:46.676Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6697b7781ac9f69513275b8c"
+  },
+  "name": "123",
+  "username": "745",
+  "password": "$2b$10$MB6FBv6oBSa2umjcQjQw6.LVroonM78TOPi1Oslsg/LTBM6QE0RH2",
+  "createdAt": {
+    "$date": "2024-07-17T12:22:16.581Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T12:22:16.581Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6697b78d1ac9f69513275b90"
+  },
+  "name": "789",
+  "username": "7890127",
+  "password": "$2b$10$zidyik6mwpCvCcu8DzX21e1oz2J6GCShdUuti.p3fRsbY29leVSTy",
+  "createdAt": {
+    "$date": "2024-07-17T12:22:37.730Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T12:22:37.730Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6697b7ae942202715f34201e"
+  },
+  "name": "4534534",
+  "username": "537837",
+  "password": "$2b$10$HsTiI9ta1FgIl/sR8TnUK.o/shEW5/u6gk8O4JexRhu762xqZM1Fm",
+  "createdAt": {
+    "$date": "2024-07-17T12:23:10.693Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T12:23:10.693Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6697b7ca942202715f342021"
+  },
+  "name": "123",
+  "username": "745537",
+  "password": "$2b$10$C882k/xsrUnjbKY9eIpq3eW7fjd/mQEVfcxRuNOBXn2sGhKynKrey",
+  "createdAt": {
+    "$date": "2024-07-17T12:23:38.403Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T12:23:38.403Z"
+  },
+  "__v": 0
+}]
