@@ -258,7 +258,7 @@ npm create vite@latest
 
 Sau đó, cài đặt những gói thư viện cần thiết này:
 ```
-npm install react-router-dom react-helmet axios
+npm install react-router-dom react-helmet axios jwt-decode
 ```
 
 và cài thêm <b>ES7+ React/Redux/React-Native snippets</b>.
@@ -266,6 +266,7 @@ và cài thêm <b>ES7+ React/Redux/React-Native snippets</b>.
 Cụ thể hơn:
 * `react-router-dom`: Dùng để quản lý điều hướng trong website.
 * `react-helmet`: Dùng để quản lý các tài nguyên trong `<head>` hoặc **script** trong `<body>`,...
+* `jwt-decode`: Giải mã token của JWT.
 Chú ý: Đừng nhét các file `css` vào **Helmet**, sẽ gây lỗi load file CSS chậm.
 
 ## Bước 3
