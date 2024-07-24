@@ -72,7 +72,8 @@ npm install dotenv
 npm install bcrypt
 ```
 * **Session & Cookie**:
-  - **Session**: Là phiên làm việc giữa client và server, thông tin phiên làm việc được lưu trữ trên server và được liên kết với 1 session ID duy nhất.
+  - **Session**: Là phiên làm việc giữa client và server, thông tin phiên làm việc được lưu trữ trên server và được liên kết với 1 session ID duy nhất. Session sẽ kết thúc khi bạn tắt trình duyệt. **Cơ cấu hoạt động:** Sau khi đăng nhập xong (mình sẽ tạm gọi đây là request đầu tiên), server sẽ tạo một session và dữ liệu của session sẽ được lưu ở trên bộ nhớ của server. Mỗi session thì có một ID riêng, và ID này sẽ được lưu ở cookie trên trình duyệt của người dùng. Từ request thứ 2 trở đi, cookie sẽ được gửi kèm theo mỗi request. Server có thể so khớp session ID trong cookies được gửi kèm kia với session data lưu ở trong bộ nhớ, qua đó xác thực danh tính của người dùng vào trả về response. Đến khi đăng xuất, toàn bộ session data này sẽ bị xóa khỏi bộ nhớ.
+
   - **Cookie**: Là đoạn dữ liệu được lưu trữ trong trình duyệt, thường được sử dụng để lưu trữ session ID, sở thích của người dùng trên Internet,...
 ```
 npm install express-session
@@ -86,6 +87,10 @@ npm install express-rate-limit
 npm install fs
 ```
 * **JWT (JSON Web Token)**: Là một tiêu chuẩn mở cho việc tạo ra các token truy cập an toàn dựa trên JSON, thường được sử dụng để xác thực và ủy quyền người dùng trong ứng dụng web và di động.
+
+Thông thường, nếu so với `Session`:
+   * `Session`: Bảo mật tốt hơn. Nhược điểm là nếu hoạt động nhiều server cùng 1 lúc, session ID gửi kèm theo request thì có thể được tìm thấy ở server này nhưng lại không ở server khác, dẫn đến trải nghiệm tồi tệ.
+   * `JWT`: Hiệu suất và khả năng mở rộng tốt hơn vì token được lưu ở phía **Client**, không phải ở phía **Server** như `Session` nên tối ưu bộ nhớ hơn. Nhược điểm là: JWT chứa thông tin người dùng nhiều hơn so với Session ID và phải cẩn thận về vấn đề bảo mật hơn như lưu trữ token,...
 ```
 npm install jsonwebtoken
 ```
@@ -253,7 +258,7 @@ npm create vite@latest
 
 Sau đó, cài đặt những gói thư viện cần thiết này:
 ```
-npm install react-router-dom react-helmet axios
+npm install react-router-dom react-helmet axios jwt-decode
 ```
 
 và cài thêm <b>ES7+ React/Redux/React-Native snippets</b>.
@@ -261,6 +266,7 @@ và cài thêm <b>ES7+ React/Redux/React-Native snippets</b>.
 Cụ thể hơn:
 * `react-router-dom`: Dùng để quản lý điều hướng trong website.
 * `react-helmet`: Dùng để quản lý các tài nguyên trong `<head>` hoặc **script** trong `<body>`,...
+* `jwt-decode`: Giải mã token của JWT.
 Chú ý: Đừng nhét các file `css` vào **Helmet**, sẽ gây lỗi load file CSS chậm.
 
 ## Bước 3
