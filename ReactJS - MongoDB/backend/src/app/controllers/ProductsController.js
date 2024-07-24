@@ -27,7 +27,7 @@ class ProductsController
     async save_a_product(req, res, next) {
         try {
             const { csw_products, type, description, price } = req.body
-            const newProduct = new Products({ csw_products, type, description, price })
+            const newProduct = new Products(req.body)
             await newProduct.save()
 
             res.status(201).json({
@@ -46,7 +46,7 @@ class ProductsController
     {
         try {        
             const productID = await Products.findById(req.params.id)
-            // Another method: const productID = await Products.findOne({ id: req.params.id})
+            // Another method: const productID = await Products.findOne({ _id: req.params.id})
 
             if (!productID) {
                 return res.status(404).json({
@@ -70,6 +70,10 @@ class ProductsController
             await Products.findByIdAndUpdate(req.params.id, {
                 csw_products, type, description, price
             })
+            // Another method:
+            // await Products.updateOne({_id :req.params.id}, {
+            //     csw_products, type, description, price
+            // })
             
             res.status(200).json({
                 message: "Product updated successfully!"
