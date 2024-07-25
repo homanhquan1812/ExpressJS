@@ -225,11 +225,13 @@ Project
 ## Bước 3
 Tương tự như ở trên, ta sẽ có 1 website y chang **Handlebars**.
 
-# ReactJS (MongoDB)
+# ReactJS
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/f8e7f629-912e-4917-92e0-2536e2434014" alt="NodeJS + ExpressJS Logo" width="600">
 </div>
+
+> MongoDB
 
 ## Bước 1
 Mở Terminal của thư mục `backend` lên, tạo tài nguyên backend bằng cách chạy:
@@ -258,13 +260,7 @@ npm create vite@latest
 
 Xem chi tiết tại [đây](https://github.com/homanhquan1812/ReactJS).
 
-# ReactJS (PostgreSQL/MySQL)
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/f8e7f629-912e-4917-92e0-2536e2434014" alt="NodeJS + ExpressJS Logo" width="600">
-</div>
-
-> Về cơ bản, thay đổi database chỉ ảnh hưởng tới **backend**, không ảnh hưởng tới **frontend**.
+> PostgreSQL (Về cơ bản, thay đổi database chỉ ảnh hưởng tới **backend**, không ảnh hưởng tới **frontend**)
 
 ## PostgreSQL
 Cài thêm thư viện sau ở backend:
