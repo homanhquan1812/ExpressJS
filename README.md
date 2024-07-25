@@ -231,9 +231,9 @@ Tương tự như ở trên, ta sẽ có 1 website y chang **Handlebars**.
   <img src="https://github.com/user-attachments/assets/f8e7f629-912e-4917-92e0-2536e2434014" alt="NodeJS + ExpressJS Logo" width="600">
 </div>
 
-> MongoDB
+## MongoDB
 
-## Bước 1
+### Bước 1
 Mở Terminal của thư mục `backend` lên, tạo tài nguyên backend bằng cách chạy:
 ```
 npm init
@@ -251,7 +251,7 @@ Cụ thể hơn:
 npm install cors
 ```
 
-## Bước 2
+### Bước 2
 Mở Terminal của thư mục dự án lên, tạo tài nguyên frontend bằng cách chạy:
 ```
 npm create vite@latest
@@ -260,9 +260,11 @@ npm create vite@latest
 
 Xem chi tiết tại [đây](https://github.com/homanhquan1812/ReactJS).
 
-> PostgreSQL (Về cơ bản, thay đổi database chỉ ảnh hưởng tới **backend**, không ảnh hưởng tới **frontend**)
+> PostgreSQL 
 
 ## PostgreSQL
+> Về cơ bản, thay đổi database chỉ ảnh hưởng tới **backend**, không ảnh hưởng tới **frontend**.
+
 Cài thêm thư viện sau ở backend:
 * `pg`: Chứa các dữ liệu cần thiết để kết nối database PostgreSQL.
 ```
